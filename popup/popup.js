@@ -52,6 +52,7 @@ class PopupApp {
     this.progressText = document.getElementById('progress-text');
     
     this.sampleCount = document.getElementById('sample-count');
+    this.clearDataBtn = document.getElementById('clear-data-btn');
   }
 
   initEventListeners() {
@@ -65,6 +66,7 @@ class PopupApp {
     this.fillBtn.addEventListener('click', () => this.fillPuzzle());
     this.backBtn.addEventListener('click', () => this.backToEdit());
     this.exportBtn.addEventListener('click', () => this.exportTrainingData());
+    this.clearDataBtn.addEventListener('click', () => this.clearTrainingData());
 
     this.dropzone.addEventListener('click', () => this.fileInput.click());
     this.dropzone.addEventListener('dragover', (e) => {
@@ -387,6 +389,27 @@ class PopupApp {
     } catch (err) {
       console.error('Export error:', err);
       this.showStatus(`Export error: ${err.message || err || 'Unknown error'}`, 'error');
+    }
+  }
+
+  async clearTrainingData() {
+    const count = await this.trainingStore.getCount();
+    if (count === 0) {
+      this.showStatus('No training data to clear', 'info');
+      return;
+    }
+    
+    if (!confirm(`Clear all ${count} training samples? This cannot be undone.`)) {
+      return;
+    }
+    
+    try {
+      await this.trainingStore.clearAll();
+      this.updateTrainingStats();
+      this.showStatus('Training data cleared', 'success');
+    } catch (err) {
+      console.error('Clear error:', err);
+      this.showStatus(`Clear error: ${err.message || err || 'Unknown error'}`, 'error');
     }
   }
 
