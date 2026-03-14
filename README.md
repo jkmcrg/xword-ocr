@@ -1,5 +1,10 @@
 # NYT Crossword Paper Filler
 
+> **Original Prompt:**
+> I love doing the NYT crossword but I can't track my streak or times because I like to print them out rather than do them on the app or online. I would like a web extension that solves both of these problems:
+> - It takes a picture of the completed puzzle, scans it with OCR, loads it into memory, and then inputs it into the online web interface for the puzzle
+> - It takes an amount of time for it to wait to input the last character, or 0 to bypass
+
 A Chrome extension that scans your completed paper crossword puzzles and automatically fills them into the NYT crossword web interface.
 
 ## Features
@@ -77,6 +82,8 @@ nyt-xword-paper-filler/
 │   ├── ocr-worker.js      # Tesseract.js wrapper
 │   ├── training-store.js  # IndexedDB storage
 │   └── dataset-export.js  # ZIP export functionality
+├── docs/
+│   └── PLAN.md            # Architecture & implementation plan
 └── assets/
     └── icons/             # Extension icons
 ```
