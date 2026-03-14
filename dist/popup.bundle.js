@@ -1,2 +1,2290 @@
-(()=>{var he=Object.create;var pt=Object.defineProperty;var ue=Object.getOwnPropertyDescriptor;var pe=Object.getOwnPropertyNames;var ge=Object.getPrototypeOf,fe=Object.prototype.hasOwnProperty;var gt=(s=>typeof require<"u"?require:typeof Proxy<"u"?new Proxy(s,{get:(t,e)=>(typeof require<"u"?require:t)[e]}):s)(function(s){if(typeof require<"u")return require.apply(this,arguments);throw Error('Dynamic require of "'+s+'" is not supported')});var k=(s,t)=>()=>(t||s((t={exports:{}}).exports,t),t.exports);var me=(s,t,e,r)=>{if(t&&typeof t=="object"||typeof t=="function")for(let n of pe(t))!fe.call(s,n)&&n!==e&&pt(s,n,{get:()=>t[n],enumerable:!(r=ue(t,n))||r.enumerable});return s};var we=(s,t,e)=>(e=s!=null?he(ge(s)):{},me(t||!s||!s.__esModule?pt(e,"default",{value:s,enumerable:!0}):e,s));var ft=k((rr,ot)=>{var st=function(s){"use strict";var t=Object.prototype,e=t.hasOwnProperty,r=Object.defineProperty||function(c,o,l){c[o]=l.value},n,i=typeof Symbol=="function"?Symbol:{},a=i.iterator||"@@iterator",d=i.asyncIterator||"@@asyncIterator",g=i.toStringTag||"@@toStringTag";function m(c,o,l){return Object.defineProperty(c,o,{value:l,enumerable:!0,configurable:!0,writable:!0}),c[o]}try{m({},"")}catch{m=function(o,l,w){return o[l]=w}}function L(c,o,l,w){var u=o&&o.prototype instanceof P?o:P,v=Object.create(u.prototype),h=new $(w||[]);return r(v,"_invoke",{value:et(c,l,h)}),v}s.wrap=L;function f(c,o,l){try{return{type:"normal",arg:c.call(o,l)}}catch(w){return{type:"throw",arg:w}}}var y="suspendedStart",b="suspendedYield",x="executing",B="completed",I={};function P(){}function C(){}function T(){}var q={};m(q,a,function(){return this});var A=Object.getPrototypeOf,G=A&&A(A(_([])));G&&G!==t&&e.call(G,a)&&(q=G);var M=T.prototype=P.prototype=Object.create(q);C.prototype=T,r(M,"constructor",{value:T,configurable:!0}),r(T,"constructor",{value:C,configurable:!0}),C.displayName=m(T,g,"GeneratorFunction");function Y(c){["next","throw","return"].forEach(function(o){m(c,o,function(l){return this._invoke(o,l)})})}s.isGeneratorFunction=function(c){var o=typeof c=="function"&&c.constructor;return o?o===C||(o.displayName||o.name)==="GeneratorFunction":!1},s.mark=function(c){return Object.setPrototypeOf?Object.setPrototypeOf(c,T):(c.__proto__=T,m(c,g,"GeneratorFunction")),c.prototype=Object.create(M),c},s.awrap=function(c){return{__await:c}};function U(c,o){function l(v,h,p,S){var E=f(c[v],c,h);if(E.type==="throw")S(E.arg);else{var O=E.arg,D=O.value;return D&&typeof D=="object"&&e.call(D,"__await")?o.resolve(D.__await).then(function(z){l("next",z,p,S)},function(z){l("throw",z,p,S)}):o.resolve(D).then(function(z){O.value=z,p(O)},function(z){return l("throw",z,p,S)})}}var w;function u(v,h){function p(){return new o(function(S,E){l(v,h,S,E)})}return w=w?w.then(p,p):p()}r(this,"_invoke",{value:u})}Y(U.prototype),m(U.prototype,d,function(){return this}),s.AsyncIterator=U,s.async=function(c,o,l,w,u){u===void 0&&(u=Promise);var v=new U(L(c,o,l,w),u);return s.isGeneratorFunction(o)?v:v.next().then(function(h){return h.done?h.value:v.next()})};function et(c,o,l){var w=y;return function(v,h){if(w===x)throw new Error("Generator is already running");if(w===B){if(v==="throw")throw h;return J()}for(l.method=v,l.arg=h;;){var p=l.delegate;if(p){var S=H(p,l);if(S){if(S===I)continue;return S}}if(l.method==="next")l.sent=l._sent=l.arg;else if(l.method==="throw"){if(w===y)throw w=B,l.arg;l.dispatchException(l.arg)}else l.method==="return"&&l.abrupt("return",l.arg);w=x;var E=f(c,o,l);if(E.type==="normal"){if(w=l.done?B:b,E.arg===I)continue;return{value:E.arg,done:l.done}}else E.type==="throw"&&(w=B,l.method="throw",l.arg=E.arg)}}}function H(c,o){var l=o.method,w=c.iterator[l];if(w===n)return o.delegate=null,l==="throw"&&c.iterator.return&&(o.method="return",o.arg=n,H(c,o),o.method==="throw")||l!=="return"&&(o.method="throw",o.arg=new TypeError("The iterator does not provide a '"+l+"' method")),I;var u=f(w,c.iterator,o.arg);if(u.type==="throw")return o.method="throw",o.arg=u.arg,o.delegate=null,I;var v=u.arg;if(!v)return o.method="throw",o.arg=new TypeError("iterator result is not an object"),o.delegate=null,I;if(v.done)o[c.resultName]=v.value,o.next=c.nextLoc,o.method!=="return"&&(o.method="next",o.arg=n);else return v;return o.delegate=null,I}Y(M),m(M,g,"Generator"),m(M,a,function(){return this}),m(M,"toString",function(){return"[object Generator]"});function rt(c){var o={tryLoc:c[0]};1 in c&&(o.catchLoc=c[1]),2 in c&&(o.finallyLoc=c[2],o.afterLoc=c[3]),this.tryEntries.push(o)}function F(c){var o=c.completion||{};o.type="normal",delete o.arg,c.completion=o}function $(c){this.tryEntries=[{tryLoc:"root"}],c.forEach(rt,this),this.reset(!0)}s.keys=function(c){var o=Object(c),l=[];for(var w in o)l.push(w);return l.reverse(),function u(){for(;l.length;){var v=l.pop();if(v in o)return u.value=v,u.done=!1,u}return u.done=!0,u}};function _(c){if(c){var o=c[a];if(o)return o.call(c);if(typeof c.next=="function")return c;if(!isNaN(c.length)){var l=-1,w=function u(){for(;++l<c.length;)if(e.call(c,l))return u.value=c[l],u.done=!1,u;return u.value=n,u.done=!0,u};return w.next=w}}return{next:J}}s.values=_;function J(){return{value:n,done:!0}}return $.prototype={constructor:$,reset:function(c){if(this.prev=0,this.next=0,this.sent=this._sent=n,this.done=!1,this.delegate=null,this.method="next",this.arg=n,this.tryEntries.forEach(F),!c)for(var o in this)o.charAt(0)==="t"&&e.call(this,o)&&!isNaN(+o.slice(1))&&(this[o]=n)},stop:function(){this.done=!0;var c=this.tryEntries[0],o=c.completion;if(o.type==="throw")throw o.arg;return this.rval},dispatchException:function(c){if(this.done)throw c;var o=this;function l(S,E){return v.type="throw",v.arg=c,o.next=S,E&&(o.method="next",o.arg=n),!!E}for(var w=this.tryEntries.length-1;w>=0;--w){var u=this.tryEntries[w],v=u.completion;if(u.tryLoc==="root")return l("end");if(u.tryLoc<=this.prev){var h=e.call(u,"catchLoc"),p=e.call(u,"finallyLoc");if(h&&p){if(this.prev<u.catchLoc)return l(u.catchLoc,!0);if(this.prev<u.finallyLoc)return l(u.finallyLoc)}else if(h){if(this.prev<u.catchLoc)return l(u.catchLoc,!0)}else if(p){if(this.prev<u.finallyLoc)return l(u.finallyLoc)}else throw new Error("try statement without catch or finally")}}},abrupt:function(c,o){for(var l=this.tryEntries.length-1;l>=0;--l){var w=this.tryEntries[l];if(w.tryLoc<=this.prev&&e.call(w,"finallyLoc")&&this.prev<w.finallyLoc){var u=w;break}}u&&(c==="break"||c==="continue")&&u.tryLoc<=o&&o<=u.finallyLoc&&(u=null);var v=u?u.completion:{};return v.type=c,v.arg=o,u?(this.method="next",this.next=u.finallyLoc,I):this.complete(v)},complete:function(c,o){if(c.type==="throw")throw c.arg;return c.type==="break"||c.type==="continue"?this.next=c.arg:c.type==="return"?(this.rval=this.arg=c.arg,this.method="return",this.next="end"):c.type==="normal"&&o&&(this.next=o),I},finish:function(c){for(var o=this.tryEntries.length-1;o>=0;--o){var l=this.tryEntries[o];if(l.finallyLoc===c)return this.complete(l.completion,l.afterLoc),F(l),I}},catch:function(c){for(var o=this.tryEntries.length-1;o>=0;--o){var l=this.tryEntries[o];if(l.tryLoc===c){var w=l.completion;if(w.type==="throw"){var u=w.arg;F(l)}return u}}throw new Error("illegal catch attempt")},delegateYield:function(c,o,l){return this.delegate={iterator:_(c),resultName:o,nextLoc:l},this.method==="next"&&(this.arg=n),I}},s}(typeof ot=="object"?ot.exports:{});try{regeneratorRuntime=st}catch{typeof globalThis=="object"?globalThis.regeneratorRuntime=st:Function("r","regeneratorRuntime = r")(st)}});var Z=k((nr,mt)=>{mt.exports=(s,t)=>`${s}-${t}-${Math.random().toString(16).slice(3,8)}`});var it=k((sr,yt)=>{var ye=Z(),wt=0;yt.exports=({id:s,action:t,payload:e={}})=>{let r=s;return typeof r>"u"&&(r=ye("Job",wt),wt+=1),{id:r,action:t,payload:e}}});var V=k(W=>{var at=!1;W.logging=at;W.setLogging=s=>{at=s};W.log=(...s)=>at?console.log.apply(W,s):null});var Et=k((vt,St)=>{var be=it(),{log:Q}=V(),ve=Z(),bt=0;St.exports=()=>{let s=ve("Scheduler",bt),t={},e={},r=[];bt+=1;let n=()=>r.length,i=()=>Object.keys(t).length,a=()=>{if(r.length!==0){let f=Object.keys(t);for(let y=0;y<f.length;y+=1)if(typeof e[f[y]]>"u"){r[0](t[f[y]]);break}}},d=(f,y)=>new Promise((b,x)=>{let B=be({action:f,payload:y});r.push(async I=>{r.shift(),e[I.id]=B;try{b(await I[f].apply(vt,[...y,B.id]))}catch(P){x(P)}finally{delete e[I.id],a()}}),Q(`[${s}]: Add ${B.id} to JobQueue`),Q(`[${s}]: JobQueue length=${r.length}`),a()});return{addWorker:f=>(t[f.id]=f,Q(`[${s}]: Add ${f.id}`),Q(`[${s}]: Number of workers=${i()}`),a(),f.id),addJob:async(f,...y)=>{if(i()===0)throw Error(`[${s}]: You need to have at least one worker before adding jobs`);return d(f,y)},terminate:async()=>{Object.keys(t).forEach(async f=>{await t[f].terminate()}),r=[]},getQueueLen:n,getNumWorkers:i}}});var kt=k((ir,Lt)=>{function Se(){return!!(typeof window<"u"&&typeof window.process=="object"&&window.process.type==="renderer"||typeof process<"u"&&typeof process.versions=="object"&&process.versions.electron||typeof navigator=="object"&&typeof navigator.userAgent=="string"&&navigator.userAgent.indexOf("Electron")>=0)}Lt.exports=Se});var xt=k((ar,It)=>{var Ee=kt();It.exports=s=>{let t={};return typeof WorkerGlobalScope<"u"?t.type="webworker":Ee()?t.type="electron":typeof document=="object"?t.type="browser":typeof process=="object"&&typeof gt=="function"&&(t.type="node"),typeof s>"u"?t:t[s]}});var Bt=k((lr,Ct)=>{var Le=xt()("type")==="browser",ke=Le?s=>new URL(s,window.location.href).href:s=>s;Ct.exports=s=>{let t={...s};return["corePath","workerPath","langPath"].forEach(e=>{s[e]&&(t[e]=ke(t[e]))}),t}});var Pt=k((dr,Ot)=>{Ot.exports=s=>{let t=[],e=[],r=[],n=[],i=[];return s.blocks&&s.blocks.forEach(a=>{a.paragraphs.forEach(d=>{d.lines.forEach(g=>{g.words.forEach(m=>{m.symbols.forEach(L=>{i.push({...L,page:s,block:a,paragraph:d,line:g,word:m})}),n.push({...m,page:s,block:a,paragraph:d,line:g})}),r.push({...g,page:s,block:a,paragraph:d})}),e.push({...d,page:s,block:a})}),t.push({...a,page:s})}),{...s,blocks:t,paragraphs:e,lines:r,words:n,symbols:i}}});var ct=k((hr,At)=>{At.exports={TESSERACT_ONLY:0,LSTM_ONLY:1,TESSERACT_LSTM_COMBINED:2,DEFAULT:3}});var Dt=k((ur,Ie)=>{Ie.exports={name:"tesseract.js",version:"5.1.1",description:"Pure Javascript Multilingual OCR",main:"src/index.js",types:"src/index.d.ts",unpkg:"dist/tesseract.min.js",jsdelivr:"dist/tesseract.min.js",scripts:{start:"node scripts/server.js",build:"rimraf dist && webpack --config scripts/webpack.config.prod.js && rollup -c scripts/rollup.esm.mjs","profile:tesseract":"webpack-bundle-analyzer dist/tesseract-stats.json","profile:worker":"webpack-bundle-analyzer dist/worker-stats.json",prepublishOnly:"npm run build",wait:"rimraf dist && wait-on http://localhost:3000/dist/tesseract.min.js",test:"npm-run-all -p -r start test:all","test:all":"npm-run-all wait test:browser:* test:node:all","test:node":"nyc mocha --exit --bail --require ./scripts/test-helper.js","test:node:all":"npm run test:node -- ./tests/*.test.js","test:browser-tpl":"mocha-headless-chrome -a incognito -a no-sandbox -a disable-setuid-sandbox -a disable-logging -t 300000","test:browser:detect":"npm run test:browser-tpl -- -f ./tests/detect.test.html","test:browser:recognize":"npm run test:browser-tpl -- -f ./tests/recognize.test.html","test:browser:scheduler":"npm run test:browser-tpl -- -f ./tests/scheduler.test.html","test:browser:FS":"npm run test:browser-tpl -- -f ./tests/FS.test.html",lint:"eslint src","lint:fix":"eslint --fix src",postinstall:"opencollective-postinstall || true"},browser:{"./src/worker/node/index.js":"./src/worker/browser/index.js"},author:"",contributors:["jeromewu"],license:"Apache-2.0",devDependencies:{"@babel/core":"^7.21.4","@babel/eslint-parser":"^7.21.3","@babel/preset-env":"^7.21.4","@rollup/plugin-commonjs":"^24.1.0",acorn:"^8.8.2","babel-loader":"^9.1.2",buffer:"^6.0.3",cors:"^2.8.5",eslint:"^7.32.0","eslint-config-airbnb-base":"^14.2.1","eslint-plugin-import":"^2.27.5","expect.js":"^0.3.1",express:"^4.18.2",mocha:"^10.2.0","mocha-headless-chrome":"^4.0.0","npm-run-all":"^4.1.5",nyc:"^15.1.0",rimraf:"^5.0.0",rollup:"^3.20.7","wait-on":"^7.0.1",webpack:"^5.79.0","webpack-bundle-analyzer":"^4.8.0","webpack-cli":"^5.0.1","webpack-dev-middleware":"^6.0.2","rollup-plugin-sourcemaps":"^0.6.3"},dependencies:{"bmp-js":"^0.1.0","idb-keyval":"^6.2.0","is-electron":"^2.2.2","is-url":"^1.2.4","node-fetch":"^2.6.9","opencollective-postinstall":"^2.0.3","regenerator-runtime":"^0.13.3","tesseract.js-core":"^5.1.1","wasm-feature-detect":"^1.2.11",zlibjs:"^0.3.1"},overrides:{"@rollup/pluginutils":"^5.0.2"},repository:{type:"git",url:"https://github.com/naptha/tesseract.js.git"},bugs:{url:"https://github.com/naptha/tesseract.js/issues"},homepage:"https://github.com/naptha/tesseract.js",collective:{type:"opencollective",url:"https://opencollective.com/tesseractjs"}}});var Rt=k((pr,Tt)=>{Tt.exports={workerBlobURL:!0,logger:()=>{}}});var jt=k((gr,zt)=>{var xe=Dt().version,Ce=Rt();zt.exports={...Ce,workerPath:`https://cdn.jsdelivr.net/npm/tesseract.js@v${xe}/dist/worker.min.js`}});var _t=k((fr,Mt)=>{Mt.exports=({workerPath:s,workerBlobURL:t})=>{let e;if(Blob&&URL&&t){let r=new Blob([`importScripts("${s}");`],{type:"application/javascript"});e=new Worker(URL.createObjectURL(r))}else e=new Worker(s);return e}});var qt=k((mr,Nt)=>{Nt.exports=s=>{s.terminate()}});var Ut=k((wr,Gt)=>{Gt.exports=(s,t)=>{s.onmessage=({data:e})=>{t(e)}}});var $t=k((yr,Ft)=>{Ft.exports=async(s,t)=>{s.postMessage(t)}});var Yt=k((br,Wt)=>{var lt=s=>new Promise((t,e)=>{let r=new FileReader;r.onload=()=>{t(r.result)},r.onerror=({target:{error:{code:n}}})=>{e(Error(`File could not be read! Code=${n}`))},r.readAsArrayBuffer(s)}),dt=async s=>{let t=s;if(typeof s>"u")return"undefined";if(typeof s=="string")/data:image\/([a-zA-Z]*);base64,([^"]*)/.test(s)?t=atob(s.split(",")[1]).split("").map(e=>e.charCodeAt(0)):t=await(await fetch(s)).arrayBuffer();else if(typeof HTMLElement<"u"&&s instanceof HTMLElement)s.tagName==="IMG"&&(t=await dt(s.src)),s.tagName==="VIDEO"&&(t=await dt(s.poster)),s.tagName==="CANVAS"&&await new Promise(e=>{s.toBlob(async r=>{t=await lt(r),e()})});else if(typeof OffscreenCanvas<"u"&&s instanceof OffscreenCanvas){let e=await s.convertToBlob();t=await lt(e)}else(s instanceof File||s instanceof Blob)&&(t=await lt(s));return new Uint8Array(t)};Wt.exports=dt});var Jt=k((vr,Ht)=>{var Be=jt(),Oe=_t(),Pe=qt(),Ae=Ut(),De=$t(),Te=Yt();Ht.exports={defaultOptions:Be,spawnWorker:Oe,terminateWorker:Pe,onMessage:Ae,send:De,loadImage:Te}});var ht=k((Sr,Qt)=>{var Re=Bt(),ze=Pt(),j=it(),{log:Kt}=V(),je=Z(),N=ct(),{defaultOptions:Me,spawnWorker:_e,terminateWorker:Ne,onMessage:qe,loadImage:Zt,send:Ge}=Jt(),Vt=0;Qt.exports=async(s="eng",t=N.LSTM_ONLY,e={},r={})=>{let n=je("Worker",Vt),{logger:i,errorHandler:a,...d}=Re({...Me,...e}),g={},m={},L=typeof s=="string"?s.split("+"):s,f=t,y=r,b=[N.DEFAULT,N.LSTM_ONLY].includes(t)&&!d.legacyCore,x,B,I=new Promise((h,p)=>{B=h,x=p}),P=h=>{x(h.message)},C=_e(d);C.onerror=P,Vt+=1;let T=(h,p)=>{g[h]=p},q=(h,p)=>{m[h]=p},A=({id:h,action:p,payload:S})=>new Promise((E,O)=>{Kt(`[${n}]: Start ${h}, action=${p}`);let D=`${p}-${h}`;T(D,E),q(D,O),Ge(C,{workerId:n,jobId:h,action:p,payload:S})}),G=()=>console.warn("`load` is depreciated and should be removed from code (workers now come pre-loaded)"),M=h=>A(j({id:h,action:"load",payload:{options:{lstmOnly:b,corePath:d.corePath,logging:d.logging}}})),Y=(h,p,S)=>A(j({id:S,action:"FS",payload:{method:"writeFile",args:[h,p]}})),U=(h,p)=>A(j({id:p,action:"FS",payload:{method:"readFile",args:[h,{encoding:"utf8"}]}})),et=(h,p)=>A(j({id:p,action:"FS",payload:{method:"unlink",args:[h]}})),H=(h,p,S)=>A(j({id:S,action:"FS",payload:{method:h,args:p}})),rt=()=>console.warn("`loadLanguage` is depreciated and should be removed from code (workers now come with language pre-loaded)"),F=(h,p)=>A(j({id:p,action:"loadLanguage",payload:{langs:h,options:{langPath:d.langPath,dataPath:d.dataPath,cachePath:d.cachePath,cacheMethod:d.cacheMethod,gzip:d.gzip,lstmOnly:[N.DEFAULT,N.LSTM_ONLY].includes(f)&&!d.legacyLang}}})),$=()=>console.warn("`initialize` is depreciated and should be removed from code (workers now come pre-initialized)"),_=(h,p,S,E)=>A(j({id:E,action:"initialize",payload:{langs:h,oem:p,config:S}})),J=(h="eng",p,S,E)=>{if(b&&[N.TESSERACT_ONLY,N.TESSERACT_LSTM_COMBINED].includes(p))throw Error("Legacy model requested but code missing.");let O=p||f;f=O;let D=S||y;y=D;let nt=(typeof h=="string"?h.split("+"):h).filter(de=>!L.includes(de));return L.push(...nt),nt.length>0?F(nt,E).then(()=>_(h,O,D,E)):_(h,O,D,E)},c=(h={},p)=>A(j({id:p,action:"setParameters",payload:{params:h}})),o=async(h,p={},S={blocks:!0,text:!0,hocr:!0,tsv:!0},E)=>A(j({id:E,action:"recognize",payload:{image:await Zt(h),options:p,output:S}})),l=(h="Tesseract OCR Result",p=!1,S)=>(console.log("`getPDF` function is depreciated. `recognize` option `savePDF` should be used instead."),A(j({id:S,action:"getPDF",payload:{title:h,textonly:p}}))),w=async(h,p)=>{if(b)throw Error("`worker.detect` requires Legacy model, which was not loaded.");return A(j({id:p,action:"detect",payload:{image:await Zt(h)}}))},u=async()=>(C!==null&&(Ne(C),C=null),Promise.resolve());qe(C,({workerId:h,jobId:p,status:S,action:E,data:O})=>{let D=`${E}-${p}`;if(S==="resolve"){Kt(`[${h}]: Complete ${p}`);let z=O;E==="recognize"?z=ze(O):E==="getPDF"&&(z=Array.from({...O,length:Object.keys(O).length})),g[D]({jobId:p,data:z})}else if(S==="reject")if(m[D](O),E==="load"&&x(O),a)a(O);else throw Error(O);else S==="progress"&&i({...O,userJobId:p})});let v={id:n,worker:C,setResolve:T,setReject:q,load:G,writeText:Y,readText:U,removeFile:et,FS:H,loadLanguage:rt,initialize:$,reinitialize:J,setParameters:c,recognize:o,getPDF:l,detect:w,terminate:u};return M().then(()=>F(s)).then(()=>_(s,t,r)).then(()=>B(v)).catch(()=>{}),I}});var ee=k((Er,te)=>{var Xt=ht(),Ue=async(s,t,e)=>{let r=await Xt(t,1,e);return r.recognize(s).finally(async()=>{await r.terminate()})},Fe=async(s,t)=>{let e=await Xt("osd",0,t);return e.detect(s).finally(async()=>{await e.terminate()})};te.exports={recognize:Ue,detect:Fe}});var ne=k((Lr,re)=>{re.exports={AFR:"afr",AMH:"amh",ARA:"ara",ASM:"asm",AZE:"aze",AZE_CYRL:"aze_cyrl",BEL:"bel",BEN:"ben",BOD:"bod",BOS:"bos",BUL:"bul",CAT:"cat",CEB:"ceb",CES:"ces",CHI_SIM:"chi_sim",CHI_TRA:"chi_tra",CHR:"chr",CYM:"cym",DAN:"dan",DEU:"deu",DZO:"dzo",ELL:"ell",ENG:"eng",ENM:"enm",EPO:"epo",EST:"est",EUS:"eus",FAS:"fas",FIN:"fin",FRA:"fra",FRK:"frk",FRM:"frm",GLE:"gle",GLG:"glg",GRC:"grc",GUJ:"guj",HAT:"hat",HEB:"heb",HIN:"hin",HRV:"hrv",HUN:"hun",IKU:"iku",IND:"ind",ISL:"isl",ITA:"ita",ITA_OLD:"ita_old",JAV:"jav",JPN:"jpn",KAN:"kan",KAT:"kat",KAT_OLD:"kat_old",KAZ:"kaz",KHM:"khm",KIR:"kir",KOR:"kor",KUR:"kur",LAO:"lao",LAT:"lat",LAV:"lav",LIT:"lit",MAL:"mal",MAR:"mar",MKD:"mkd",MLT:"mlt",MSA:"msa",MYA:"mya",NEP:"nep",NLD:"nld",NOR:"nor",ORI:"ori",PAN:"pan",POL:"pol",POR:"por",PUS:"pus",RON:"ron",RUS:"rus",SAN:"san",SIN:"sin",SLK:"slk",SLV:"slv",SPA:"spa",SPA_OLD:"spa_old",SQI:"sqi",SRP:"srp",SRP_LATN:"srp_latn",SWA:"swa",SWE:"swe",SYR:"syr",TAM:"tam",TEL:"tel",TGK:"tgk",TGL:"tgl",THA:"tha",TIR:"tir",TUR:"tur",UIG:"uig",UKR:"ukr",URD:"urd",UZB:"uzb",UZB_CYRL:"uzb_cyrl",VIE:"vie",YID:"yid"}});var oe=k((kr,se)=>{se.exports={OSD_ONLY:"0",AUTO_OSD:"1",AUTO_ONLY:"2",AUTO:"3",SINGLE_COLUMN:"4",SINGLE_BLOCK_VERT_TEXT:"5",SINGLE_BLOCK:"6",SINGLE_LINE:"7",SINGLE_WORD:"8",CIRCLE_WORD:"9",SINGLE_CHAR:"10",SPARSE_TEXT:"11",SPARSE_TEXT_OSD:"12",RAW_LINE:"13"}});var ae=k((Ir,ie)=>{ft();var $e=Et(),We=ht(),Ye=ee(),He=ne(),Je=ct(),Ke=oe(),{setLogging:Ze}=V();ie.exports={languages:He,OEM:Je,PSM:Ke,createScheduler:$e,createWorker:We,setLogging:Ze,...Ye}});var K=class{constructor(){this.canvas=document.createElement("canvas"),this.ctx=this.canvas.getContext("2d")}async preprocess(t){let e=t.width,r=t.height;this.canvas.width=e,this.canvas.height=r,this.ctx.drawImage(t,0,0);let n=this.ctx.getImageData(0,0,e,r),i=n.data;for(let a=0;a<i.length;a+=4){let d=.299*i[a]+.587*i[a+1]+.114*i[a+2];i[a]=d,i[a+1]=d,i[a+2]=d}return this.adjustContrast(i,1.5),this.ctx.putImageData(n,0,0),this.canvas}adjustContrast(t,e){let r=128*(1-e);for(let n=0;n<t.length;n+=4)t[n]=this.clamp(t[n]*e+r),t[n+1]=this.clamp(t[n+1]*e+r),t[n+2]=this.clamp(t[n+2]*e+r)}clamp(t){return Math.max(0,Math.min(255,t))}async extractCells(t,e){let r=this.detectGrid(t),n=[],i=r.width/e,a=r.height/e;for(let d=0;d<e;d++)for(let g=0;g<e;g++){let m=r.x+g*i,L=r.y+d*a,f=this.extractCell(t,m,L,i,a),y=this.isCellBlack(f);n.push({canvas:f,isBlack:y,row:d,col:g})}return n}detectGrid(t){let e=t.width,r=t.height,a=t.getContext("2d").getImageData(0,0,e,r).data,d=new Array(r).fill(0),g=new Array(e).fill(0);for(let y=0;y<r;y++)for(let b=0;b<e;b++){let x=(y*e+b)*4;a[x]<128&&(d[y]++,g[b]++)}let m=this.findPeaks(d,r*.1),L=this.findPeaks(g,e*.1),f;if(m.length>=2&&L.length>=2){let y=Math.min(...m),b=Math.max(...m),x=Math.min(...L),B=Math.max(...L);f={x,y,width:B-x,height:b-y}}else{let y=Math.min(e,r)*.05,b=Math.min(e,r)-y*2;f={x:(e-b)/2,y:(r-b)/2,width:b,height:b}}return f}findPeaks(t,e){let r=[],n=this.smoothArray(t,5);for(let i=1;i<n.length-1;i++)n[i]>e&&n[i]>n[i-1]&&n[i]>n[i+1]&&r.push(i);return r}smoothArray(t,e){let r=[],n=Math.floor(e/2);for(let i=0;i<t.length;i++){let a=0,d=0;for(let g=Math.max(0,i-n);g<=Math.min(t.length-1,i+n);g++)a+=t[g],d++;r.push(a/d)}return r}extractCell(t,e,r,n,i){let a=Math.min(n,i)*.1,d=document.createElement("canvas");return d.width=Math.floor(n-a*2),d.height=Math.floor(i-a*2),d.getContext("2d").drawImage(t,e+a,r+a,n-a*2,i-a*2,0,0,d.width,d.height),d}isCellBlack(t){let n=t.getContext("2d").getImageData(0,0,t.width,t.height).data,i=0,a=n.length/4;for(let d=0;d<n.length;d+=4)(n[d]+n[d+1]+n[d+2])/3<50&&i++;return i/a>.7}resizeTo28x28(t){let e=document.createElement("canvas");e.width=28,e.height=28;let r=e.getContext("2d");r.fillStyle="white",r.fillRect(0,0,28,28);let i=t.getContext("2d").getImageData(0,0,t.width,t.height),a=this.findContentBounds(i);if(!a)return r.getImageData(0,0,28,28);let g=28-4*2,m=a.right-a.left,L=a.bottom-a.top,f=Math.min(g/m,g/L),y=m*f,b=L*f,x=(28-y)/2,B=(28-b)/2;r.drawImage(t,a.left,a.top,m,L,x,B,y,b);let I=r.getImageData(0,0,28,28),P=I.data;for(let C=0;C<P.length;C+=4){let T=.299*P[C]+.587*P[C+1]+.114*P[C+2];P[C]=T,P[C+1]=T,P[C+2]=T}return I}findContentBounds(t){let e=t.width,r=t.height,n=t.data,i=e,a=r,d=0,g=0,m=!1;for(let L=0;L<r;L++)for(let f=0;f<e;f++){let y=(L*e+f)*4;(n[y]+n[y+1]+n[y+2])/3<200&&(m=!0,i=Math.min(i,f),a=Math.min(a,L),d=Math.max(d,f),g=Math.max(g,L))}return m?{left:i,top:a,right:d+1,bottom:g+1}:null}};var ce=we(ae()),X=class{constructor(){this.worker=null,this.initialized=!1}async initialize(){if(!this.initialized)try{this.worker=await ce.default.createWorker("eng",1,{logger:t=>{t.status==="recognizing text"&&console.log(`OCR Progress: ${Math.round(t.progress*100)}%`)}}),await this.worker.setParameters({tessedit_char_whitelist:"ABCDEFGHIJKLMNOPQRSTUVWXYZ",tessedit_pageseg_mode:"10"}),this.initialized=!0}catch(t){throw new Error(`Failed to initialize OCR: ${t.message||t}`)}}async recognizeChar(t){this.initialized||await this.initialize();try{let e=this.preprocessForOCR(t),{data:r}=await this.worker.recognize(e),n=r.text.trim().toUpperCase();n=n.replace(/[^A-Z]/g,""),n.length>1&&(n=n[0]);let i=r.confidence/100;return{letter:n||"",confidence:n?i:0}}catch(e){return console.error("OCR error:",e),{letter:"",confidence:0}}}preprocessForOCR(t){let e=document.createElement("canvas"),r=4;e.width=t.width*r,e.height=t.height*r;let n=e.getContext("2d");n.imageSmoothingEnabled=!0,n.imageSmoothingQuality="high",n.fillStyle="white",n.fillRect(0,0,e.width,e.height),n.drawImage(t,0,0,e.width,e.height);let i=n.getImageData(0,0,e.width,e.height),a=i.data;for(let d=0;d<a.length;d+=4){let m=.299*a[d]+.587*a[d+1]+.114*a[d+2]<180?0:255;a[d]=m,a[d+1]=m,a[d+2]=m}return n.putImageData(i,0,0),e}async terminate(){this.worker&&(await this.worker.terminate(),this.worker=null,this.initialized=!1)}};var Ve="crossword-training-data";var R="samples",tt=class{constructor(){this.db=null}async open(){return this.db?this.db:new Promise((t,e)=>{let r=indexedDB.open(Ve,1);r.onerror=()=>e(r.error),r.onsuccess=()=>{this.db=r.result,t(this.db)},r.onupgradeneeded=n=>{let i=n.target.result;if(!i.objectStoreNames.contains(R)){let a=i.createObjectStore(R,{keyPath:"id",autoIncrement:!0});a.createIndex("label","label",{unique:!1}),a.createIndex("timestamp","timestamp",{unique:!1})}}})}async saveSample(t){let e=await this.open(),n={imageData:Array.from(t.imageData.data),width:t.imageData.width,height:t.imageData.height,label:t.label.toUpperCase(),timestamp:t.timestamp||Date.now()};return new Promise((i,a)=>{let m=e.transaction([R],"readwrite").objectStore(R).add(n);m.onsuccess=()=>i(m.result),m.onerror=()=>a(m.error)})}async getCount(){let t=await this.open();return new Promise((e,r)=>{let a=t.transaction([R],"readonly").objectStore(R).count();a.onsuccess=()=>e(a.result),a.onerror=()=>r(a.error)})}async getAllSamples(){let t=await this.open();return new Promise((e,r)=>{let a=t.transaction([R],"readonly").objectStore(R).getAll();a.onsuccess=()=>e(a.result),a.onerror=()=>r(a.error)})}async getSamplesByLabel(t){let e=await this.open();return new Promise((r,n)=>{let g=e.transaction([R],"readonly").objectStore(R).index("label").getAll(t.toUpperCase());g.onsuccess=()=>r(g.result),g.onerror=()=>n(g.error)})}async getLabelCounts(){let t=await this.getAllSamples(),e={};for(let r of t)e[r.label]=(e[r.label]||0)+1;return e}async deleteSample(t){let e=await this.open();return new Promise((r,n)=>{let d=e.transaction([R],"readwrite").objectStore(R).delete(t);d.onsuccess=()=>r(),d.onerror=()=>n(d.error)})}async clearAll(){let t=await this.open();return new Promise((e,r)=>{let a=t.transaction([R],"readwrite").objectStore(R).clear();a.onsuccess=()=>e(),a.onerror=()=>r(a.error)})}};async function Qe(){return typeof JSZip<"u"?JSZip:new Promise((s,t)=>{let e=document.createElement("script");e.src="https://cdn.jsdelivr.net/npm/jszip@3/dist/jszip.min.js",e.onload=()=>s(JSZip),e.onerror=t,document.head.appendChild(e)})}function Xe(s){let t=document.createElement("canvas");t.width=s.width||28,t.height=s.height||28;let e=t.getContext("2d"),r=e.createImageData(t.width,t.height);if(Array.isArray(s.imageData||s)){let n=s.imageData||s;for(let i=0;i<n.length;i++)r.data[i]=n[i]}else r.data.set(s.data);return e.putImageData(r,0,0),new Promise(n=>{t.toBlob(n,"image/png")})}async function le(s){let t=await Qe(),e=new t,r=await s.getAllSamples();if(r.length===0)throw new Error("No training samples to export");let n=e.folder("images"),i=[];for(let b=0;b<r.length;b++){let x=r[b],B=`sample_${String(b).padStart(6,"0")}.png`,I={imageData:x.imageData,width:x.width,height:x.height},P=await Xe(I);n.file(B,P),i.push({filename:B,label:x.label,timestamp:x.timestamp})}e.file("labels.json",JSON.stringify(i,null,2));let a={};for(let b of r)a[b.label]=(a[b.label]||0)+1;let d={totalSamples:r.length,labelCounts:a,imageSize:{width:28,height:28},format:"grayscale",exportDate:new Date().toISOString()};e.file("metadata.json",JSON.stringify(d,null,2));let g=await e.generateAsync({type:"blob"}),L=`crossword-training-data-${new Date().toISOString().replace(/[:.]/g,"-").slice(0,19)}.zip`,f=URL.createObjectURL(g),y=document.createElement("a");return y.href=f,y.download=L,document.body.appendChild(y),y.click(),document.body.removeChild(y),URL.revokeObjectURL(f),{filename:L,sampleCount:r.length}}var ut=class{constructor(){this.imageProcessor=new K,this.ocrWorker=new X,this.trainingStore=new tt,this.capturedImage=null,this.gridData=null,this.cellImages=[],this.gridSize=15,this.initElements(),this.initEventListeners(),this.initWebcam(),this.updateTrainingStats()}initElements(){this.statusBar=document.getElementById("status-bar"),this.statusMessage=document.getElementById("status-message"),this.webcamPreview=document.getElementById("webcam-preview"),this.captureCanvas=document.getElementById("capture-canvas"),this.imagePreview=document.getElementById("image-preview"),this.previewContainer=document.getElementById("preview-container"),this.captureBtn=document.getElementById("capture-btn"),this.processBtn=document.getElementById("process-btn"),this.retakeBtn=document.getElementById("retake-btn"),this.fillBtn=document.getElementById("fill-btn"),this.backBtn=document.getElementById("back-btn"),this.exportBtn=document.getElementById("export-btn"),this.dropzone=document.getElementById("dropzone"),this.fileInput=document.getElementById("file-input"),this.gridSection=document.getElementById("grid-section"),this.fillSection=document.getElementById("fill-section"),this.ocrGrid=document.getElementById("ocr-grid"),this.gridSizeSelect=document.getElementById("grid-size"),this.delayInput=document.getElementById("delay-input"),this.typingSpeedInput=document.getElementById("typing-speed"),this.progressContainer=document.getElementById("progress-container"),this.progressFill=document.getElementById("progress-fill"),this.progressText=document.getElementById("progress-text"),this.sampleCount=document.getElementById("sample-count")}initEventListeners(){document.querySelectorAll(".tab-btn").forEach(t=>{t.addEventListener("click",e=>this.switchTab(e.target.dataset.tab))}),this.captureBtn.addEventListener("click",()=>this.capturePhoto()),this.processBtn.addEventListener("click",()=>this.processImage()),this.retakeBtn.addEventListener("click",()=>this.retake()),this.fillBtn.addEventListener("click",()=>this.fillPuzzle()),this.backBtn.addEventListener("click",()=>this.backToEdit()),this.exportBtn.addEventListener("click",()=>this.exportTrainingData()),this.dropzone.addEventListener("click",()=>this.fileInput.click()),this.dropzone.addEventListener("dragover",t=>{t.preventDefault(),this.dropzone.classList.add("dragover")}),this.dropzone.addEventListener("dragleave",()=>{this.dropzone.classList.remove("dragover")}),this.dropzone.addEventListener("drop",t=>{t.preventDefault(),this.dropzone.classList.remove("dragover"),t.dataTransfer.files.length&&this.handleFileUpload(t.dataTransfer.files[0])}),this.fileInput.addEventListener("change",t=>{t.target.files.length&&this.handleFileUpload(t.target.files[0])}),this.gridSizeSelect.addEventListener("change",t=>{this.gridSize=parseInt(t.target.value),this.capturedImage&&this.processImage()})}async initWebcam(){try{let t=await navigator.mediaDevices.getUserMedia({video:{facingMode:"environment",width:1280,height:720}});this.webcamPreview.srcObject=t,this.webcamStream=t}catch(t){console.error("Webcam error:",t),this.showStatus("Camera not available. Use file upload instead.","error")}}switchTab(t){document.querySelectorAll(".tab-btn").forEach(e=>{e.classList.toggle("active",e.dataset.tab===t)}),document.querySelectorAll(".tab-content").forEach(e=>{e.classList.toggle("active",e.id===`${t}-tab`)})}capturePhoto(){let t=this.webcamPreview,e=this.captureCanvas;e.width=t.videoWidth,e.height=t.videoHeight,e.getContext("2d").drawImage(t,0,0),this.capturedImage=e,this.showImagePreview(e)}handleFileUpload(t){if(!t.type.startsWith("image/")){this.showStatus("Please upload an image file","error");return}let e=new FileReader;e.onload=r=>{let n=new Image;n.onload=()=>{let i=document.createElement("canvas");i.width=n.width,i.height=n.height,i.getContext("2d").drawImage(n,0,0),this.capturedImage=i,this.showImagePreview(i)},n.src=r.target.result},e.readAsDataURL(t)}showImagePreview(t){let e=this.imagePreview;e.width=t.width,e.height=t.height,e.getContext("2d").drawImage(t,0,0),this.previewContainer.classList.remove("hidden"),this.showStatus('Image captured. Click "Process Grid" to continue.',"info")}async processImage(){if(!this.capturedImage){this.showStatus("No image captured","error");return}this.showStatus("Processing image...","processing"),this.processBtn.disabled=!0;try{let t=await this.imageProcessor.preprocess(this.capturedImage);this.cellImages=await this.imageProcessor.extractCells(t,this.gridSize),this.showStatus("Running OCR on cells...","processing"),await this.ocrWorker.initialize(),this.gridData=[];let e=this.gridSize*this.gridSize;for(let r=0;r<this.cellImages.length;r++){let n=this.cellImages[r];if(n.isBlack)this.gridData.push({letter:"",isBlack:!0,confidence:1});else{let i=await this.ocrWorker.recognizeChar(n.canvas);this.gridData.push({letter:i.letter,isBlack:!1,confidence:i.confidence})}r%10===0&&this.showStatus(`OCR: ${Math.round(r/e*100)}% complete`,"processing")}this.renderGrid(),this.showStatus("OCR complete! Review and correct any errors.","success"),this.gridSection.classList.remove("hidden"),this.fillSection.classList.remove("hidden")}catch(t){console.error("Processing error:",t),this.showStatus(`Error: ${t.message||t||"Unknown error"}`,"error")}finally{this.processBtn.disabled=!1}}renderGrid(){this.ocrGrid.innerHTML="",this.ocrGrid.className=`ocr-grid size-${this.gridSize}`;for(let t=0;t<this.gridData.length;t++){let e=this.gridData[t],r=document.createElement("button");r.className="grid-cell",r.dataset.index=t,e.isBlack?r.classList.add("black"):(r.textContent=e.letter,e.confidence<.7&&r.classList.add("low-confidence"),r.addEventListener("click",()=>this.editCell(t)),r.addEventListener("keydown",n=>this.handleCellKeydown(n,t))),this.ocrGrid.appendChild(r)}}editCell(t){if(this.gridData[t].isBlack)return;this.ocrGrid.children[t].focus()}handleCellKeydown(t,e){let r=this.gridData[e];if(!r.isBlack){if(t.key.length===1&&/[a-zA-Z]/.test(t.key)){r.letter=t.key.toUpperCase(),r.edited=!0;let n=this.ocrGrid.children[e];n.textContent=r.letter,n.classList.add("edited"),n.classList.remove("low-confidence");let i=e+1;i<this.gridData.length&&!this.gridData[i].isBlack&&this.ocrGrid.children[i].focus(),t.preventDefault()}else if(t.key==="Backspace"||t.key==="Delete"){r.letter="";let n=this.ocrGrid.children[e];n.textContent="",t.preventDefault()}else if(t.key===" "){r.isBlack=!0;let n=this.ocrGrid.children[e];n.classList.add("black"),n.textContent="",t.preventDefault()}}}retake(){this.capturedImage=null,this.previewContainer.classList.add("hidden"),this.gridSection.classList.add("hidden"),this.fillSection.classList.add("hidden"),this.hideStatus()}backToEdit(){this.fillSection.classList.add("hidden"),this.gridSection.scrollIntoView({behavior:"smooth"})}async fillPuzzle(){let t=parseInt(this.delayInput.value)||0,e=parseInt(this.typingSpeedInput.value)||50,r=this.gridData.filter(n=>!n.isBlack).map(n=>n.letter||" ");if(r.length===0){this.showStatus("No letters to fill","error");return}this.fillBtn.disabled=!0,this.progressContainer.classList.remove("hidden");try{await this.saveTrainingData();let[n]=await chrome.tabs.query({active:!0,currentWindow:!0});if(!n.url?.includes("nytimes.com/crosswords")){this.showStatus("Please navigate to the NYT crossword page first","error");return}await chrome.tabs.sendMessage(n.id,{action:"fillPuzzle",letters:r,delay:t*1e3,typingSpeed:e}),chrome.runtime.onMessage.addListener(i=>{if(i.action==="fillProgress"){let a=Math.round(i.current/i.total*100);this.progressFill.style.width=`${a}%`,this.progressText.textContent=`${a}%`}else i.action==="fillComplete"?(this.showStatus("Puzzle filled successfully!","success"),this.fillBtn.disabled=!1):i.action==="fillError"&&(this.showStatus(`Error: ${i.error}`,"error"),this.fillBtn.disabled=!1)})}catch(n){console.error("Fill error:",n),this.showStatus(`Error: ${n.message||n||"Unknown error"}`,"error"),this.fillBtn.disabled=!1}}async saveTrainingData(){for(let t=0;t<this.gridData.length;t++){let e=this.gridData[t];if(e.isBlack||!e.letter)continue;let r=this.cellImages[t];if(!r||r.isBlack)continue;let n=this.imageProcessor.resizeTo28x28(r.canvas);await this.trainingStore.saveSample({imageData:n,label:e.letter,timestamp:Date.now()})}this.updateTrainingStats()}async updateTrainingStats(){let t=await this.trainingStore.getCount();this.sampleCount.textContent=`${t} samples collected`}async exportTrainingData(){this.showStatus("Exporting dataset...","processing");try{await le(this.trainingStore),this.showStatus("Dataset exported!","success")}catch(t){console.error("Export error:",t),this.showStatus(`Export error: ${t.message||t||"Unknown error"}`,"error")}}showStatus(t,e="info"){this.statusBar.className=`status-bar ${e}`,this.statusMessage.textContent=t,this.statusBar.classList.remove("hidden")}hideStatus(){this.statusBar.classList.add("hidden")}};document.addEventListener("DOMContentLoaded",()=>{new ut});})();
+(() => {
+  var __create = Object.create;
+  var __defProp = Object.defineProperty;
+  var __getOwnPropDesc = Object.getOwnPropertyDescriptor;
+  var __getOwnPropNames = Object.getOwnPropertyNames;
+  var __getProtoOf = Object.getPrototypeOf;
+  var __hasOwnProp = Object.prototype.hasOwnProperty;
+  var __require = /* @__PURE__ */ ((x) => typeof require !== "undefined" ? require : typeof Proxy !== "undefined" ? new Proxy(x, {
+    get: (a, b) => (typeof require !== "undefined" ? require : a)[b]
+  }) : x)(function(x) {
+    if (typeof require !== "undefined")
+      return require.apply(this, arguments);
+    throw Error('Dynamic require of "' + x + '" is not supported');
+  });
+  var __commonJS = (cb, mod) => function __require2() {
+    return mod || (0, cb[__getOwnPropNames(cb)[0]])((mod = { exports: {} }).exports, mod), mod.exports;
+  };
+  var __copyProps = (to, from, except, desc) => {
+    if (from && typeof from === "object" || typeof from === "function") {
+      for (let key of __getOwnPropNames(from))
+        if (!__hasOwnProp.call(to, key) && key !== except)
+          __defProp(to, key, { get: () => from[key], enumerable: !(desc = __getOwnPropDesc(from, key)) || desc.enumerable });
+    }
+    return to;
+  };
+  var __toESM = (mod, isNodeMode, target) => (target = mod != null ? __create(__getProtoOf(mod)) : {}, __copyProps(
+    // If the importer is in node compatibility mode or this is not an ESM
+    // file that has been converted to a CommonJS file using a Babel-
+    // compatible transform (i.e. "__esModule" has not been set), then set
+    // "default" to the CommonJS "module.exports" for node compatibility.
+    isNodeMode || !mod || !mod.__esModule ? __defProp(target, "default", { value: mod, enumerable: true }) : target,
+    mod
+  ));
+
+  // node_modules/regenerator-runtime/runtime.js
+  var require_runtime = __commonJS({
+    "node_modules/regenerator-runtime/runtime.js"(exports, module) {
+      var runtime = function(exports2) {
+        "use strict";
+        var Op = Object.prototype;
+        var hasOwn = Op.hasOwnProperty;
+        var defineProperty = Object.defineProperty || function(obj, key, desc) {
+          obj[key] = desc.value;
+        };
+        var undefined;
+        var $Symbol = typeof Symbol === "function" ? Symbol : {};
+        var iteratorSymbol = $Symbol.iterator || "@@iterator";
+        var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+        var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+        function define(obj, key, value) {
+          Object.defineProperty(obj, key, {
+            value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+          });
+          return obj[key];
+        }
+        try {
+          define({}, "");
+        } catch (err) {
+          define = function(obj, key, value) {
+            return obj[key] = value;
+          };
+        }
+        function wrap(innerFn, outerFn, self, tryLocsList) {
+          var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+          var generator = Object.create(protoGenerator.prototype);
+          var context = new Context(tryLocsList || []);
+          defineProperty(generator, "_invoke", { value: makeInvokeMethod(innerFn, self, context) });
+          return generator;
+        }
+        exports2.wrap = wrap;
+        function tryCatch(fn, obj, arg) {
+          try {
+            return { type: "normal", arg: fn.call(obj, arg) };
+          } catch (err) {
+            return { type: "throw", arg: err };
+          }
+        }
+        var GenStateSuspendedStart = "suspendedStart";
+        var GenStateSuspendedYield = "suspendedYield";
+        var GenStateExecuting = "executing";
+        var GenStateCompleted = "completed";
+        var ContinueSentinel = {};
+        function Generator() {
+        }
+        function GeneratorFunction() {
+        }
+        function GeneratorFunctionPrototype() {
+        }
+        var IteratorPrototype = {};
+        define(IteratorPrototype, iteratorSymbol, function() {
+          return this;
+        });
+        var getProto = Object.getPrototypeOf;
+        var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+        if (NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) {
+          IteratorPrototype = NativeIteratorPrototype;
+        }
+        var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
+        GeneratorFunction.prototype = GeneratorFunctionPrototype;
+        defineProperty(Gp, "constructor", { value: GeneratorFunctionPrototype, configurable: true });
+        defineProperty(
+          GeneratorFunctionPrototype,
+          "constructor",
+          { value: GeneratorFunction, configurable: true }
+        );
+        GeneratorFunction.displayName = define(
+          GeneratorFunctionPrototype,
+          toStringTagSymbol,
+          "GeneratorFunction"
+        );
+        function defineIteratorMethods(prototype) {
+          ["next", "throw", "return"].forEach(function(method) {
+            define(prototype, method, function(arg) {
+              return this._invoke(method, arg);
+            });
+          });
+        }
+        exports2.isGeneratorFunction = function(genFun) {
+          var ctor = typeof genFun === "function" && genFun.constructor;
+          return ctor ? ctor === GeneratorFunction || // For the native GeneratorFunction constructor, the best we can
+          // do is to check its .name property.
+          (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
+        };
+        exports2.mark = function(genFun) {
+          if (Object.setPrototypeOf) {
+            Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+          } else {
+            genFun.__proto__ = GeneratorFunctionPrototype;
+            define(genFun, toStringTagSymbol, "GeneratorFunction");
+          }
+          genFun.prototype = Object.create(Gp);
+          return genFun;
+        };
+        exports2.awrap = function(arg) {
+          return { __await: arg };
+        };
+        function AsyncIterator(generator, PromiseImpl) {
+          function invoke(method, arg, resolve, reject) {
+            var record = tryCatch(generator[method], generator, arg);
+            if (record.type === "throw") {
+              reject(record.arg);
+            } else {
+              var result = record.arg;
+              var value = result.value;
+              if (value && typeof value === "object" && hasOwn.call(value, "__await")) {
+                return PromiseImpl.resolve(value.__await).then(function(value2) {
+                  invoke("next", value2, resolve, reject);
+                }, function(err) {
+                  invoke("throw", err, resolve, reject);
+                });
+              }
+              return PromiseImpl.resolve(value).then(function(unwrapped) {
+                result.value = unwrapped;
+                resolve(result);
+              }, function(error) {
+                return invoke("throw", error, resolve, reject);
+              });
+            }
+          }
+          var previousPromise;
+          function enqueue(method, arg) {
+            function callInvokeWithMethodAndArg() {
+              return new PromiseImpl(function(resolve, reject) {
+                invoke(method, arg, resolve, reject);
+              });
+            }
+            return previousPromise = // If enqueue has been called before, then we want to wait until
+            // all previous Promises have been resolved before calling invoke,
+            // so that results are always delivered in the correct order. If
+            // enqueue has not been called before, then it is important to
+            // call invoke immediately, without waiting on a callback to fire,
+            // so that the async generator function has the opportunity to do
+            // any necessary setup in a predictable way. This predictability
+            // is why the Promise constructor synchronously invokes its
+            // executor callback, and why async functions synchronously
+            // execute code before the first await. Since we implement simple
+            // async functions in terms of async generators, it is especially
+            // important to get this right, even though it requires care.
+            previousPromise ? previousPromise.then(
+              callInvokeWithMethodAndArg,
+              // Avoid propagating failures to Promises returned by later
+              // invocations of the iterator.
+              callInvokeWithMethodAndArg
+            ) : callInvokeWithMethodAndArg();
+          }
+          defineProperty(this, "_invoke", { value: enqueue });
+        }
+        defineIteratorMethods(AsyncIterator.prototype);
+        define(AsyncIterator.prototype, asyncIteratorSymbol, function() {
+          return this;
+        });
+        exports2.AsyncIterator = AsyncIterator;
+        exports2.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+          if (PromiseImpl === void 0)
+            PromiseImpl = Promise;
+          var iter = new AsyncIterator(
+            wrap(innerFn, outerFn, self, tryLocsList),
+            PromiseImpl
+          );
+          return exports2.isGeneratorFunction(outerFn) ? iter : iter.next().then(function(result) {
+            return result.done ? result.value : iter.next();
+          });
+        };
+        function makeInvokeMethod(innerFn, self, context) {
+          var state = GenStateSuspendedStart;
+          return function invoke(method, arg) {
+            if (state === GenStateExecuting) {
+              throw new Error("Generator is already running");
+            }
+            if (state === GenStateCompleted) {
+              if (method === "throw") {
+                throw arg;
+              }
+              return doneResult();
+            }
+            context.method = method;
+            context.arg = arg;
+            while (true) {
+              var delegate = context.delegate;
+              if (delegate) {
+                var delegateResult = maybeInvokeDelegate(delegate, context);
+                if (delegateResult) {
+                  if (delegateResult === ContinueSentinel)
+                    continue;
+                  return delegateResult;
+                }
+              }
+              if (context.method === "next") {
+                context.sent = context._sent = context.arg;
+              } else if (context.method === "throw") {
+                if (state === GenStateSuspendedStart) {
+                  state = GenStateCompleted;
+                  throw context.arg;
+                }
+                context.dispatchException(context.arg);
+              } else if (context.method === "return") {
+                context.abrupt("return", context.arg);
+              }
+              state = GenStateExecuting;
+              var record = tryCatch(innerFn, self, context);
+              if (record.type === "normal") {
+                state = context.done ? GenStateCompleted : GenStateSuspendedYield;
+                if (record.arg === ContinueSentinel) {
+                  continue;
+                }
+                return {
+                  value: record.arg,
+                  done: context.done
+                };
+              } else if (record.type === "throw") {
+                state = GenStateCompleted;
+                context.method = "throw";
+                context.arg = record.arg;
+              }
+            }
+          };
+        }
+        function maybeInvokeDelegate(delegate, context) {
+          var methodName = context.method;
+          var method = delegate.iterator[methodName];
+          if (method === undefined) {
+            context.delegate = null;
+            if (methodName === "throw" && delegate.iterator["return"]) {
+              context.method = "return";
+              context.arg = undefined;
+              maybeInvokeDelegate(delegate, context);
+              if (context.method === "throw") {
+                return ContinueSentinel;
+              }
+            }
+            if (methodName !== "return") {
+              context.method = "throw";
+              context.arg = new TypeError(
+                "The iterator does not provide a '" + methodName + "' method"
+              );
+            }
+            return ContinueSentinel;
+          }
+          var record = tryCatch(method, delegate.iterator, context.arg);
+          if (record.type === "throw") {
+            context.method = "throw";
+            context.arg = record.arg;
+            context.delegate = null;
+            return ContinueSentinel;
+          }
+          var info = record.arg;
+          if (!info) {
+            context.method = "throw";
+            context.arg = new TypeError("iterator result is not an object");
+            context.delegate = null;
+            return ContinueSentinel;
+          }
+          if (info.done) {
+            context[delegate.resultName] = info.value;
+            context.next = delegate.nextLoc;
+            if (context.method !== "return") {
+              context.method = "next";
+              context.arg = undefined;
+            }
+          } else {
+            return info;
+          }
+          context.delegate = null;
+          return ContinueSentinel;
+        }
+        defineIteratorMethods(Gp);
+        define(Gp, toStringTagSymbol, "Generator");
+        define(Gp, iteratorSymbol, function() {
+          return this;
+        });
+        define(Gp, "toString", function() {
+          return "[object Generator]";
+        });
+        function pushTryEntry(locs) {
+          var entry = { tryLoc: locs[0] };
+          if (1 in locs) {
+            entry.catchLoc = locs[1];
+          }
+          if (2 in locs) {
+            entry.finallyLoc = locs[2];
+            entry.afterLoc = locs[3];
+          }
+          this.tryEntries.push(entry);
+        }
+        function resetTryEntry(entry) {
+          var record = entry.completion || {};
+          record.type = "normal";
+          delete record.arg;
+          entry.completion = record;
+        }
+        function Context(tryLocsList) {
+          this.tryEntries = [{ tryLoc: "root" }];
+          tryLocsList.forEach(pushTryEntry, this);
+          this.reset(true);
+        }
+        exports2.keys = function(val) {
+          var object = Object(val);
+          var keys = [];
+          for (var key in object) {
+            keys.push(key);
+          }
+          keys.reverse();
+          return function next() {
+            while (keys.length) {
+              var key2 = keys.pop();
+              if (key2 in object) {
+                next.value = key2;
+                next.done = false;
+                return next;
+              }
+            }
+            next.done = true;
+            return next;
+          };
+        };
+        function values(iterable) {
+          if (iterable) {
+            var iteratorMethod = iterable[iteratorSymbol];
+            if (iteratorMethod) {
+              return iteratorMethod.call(iterable);
+            }
+            if (typeof iterable.next === "function") {
+              return iterable;
+            }
+            if (!isNaN(iterable.length)) {
+              var i = -1, next = function next2() {
+                while (++i < iterable.length) {
+                  if (hasOwn.call(iterable, i)) {
+                    next2.value = iterable[i];
+                    next2.done = false;
+                    return next2;
+                  }
+                }
+                next2.value = undefined;
+                next2.done = true;
+                return next2;
+              };
+              return next.next = next;
+            }
+          }
+          return { next: doneResult };
+        }
+        exports2.values = values;
+        function doneResult() {
+          return { value: undefined, done: true };
+        }
+        Context.prototype = {
+          constructor: Context,
+          reset: function(skipTempReset) {
+            this.prev = 0;
+            this.next = 0;
+            this.sent = this._sent = undefined;
+            this.done = false;
+            this.delegate = null;
+            this.method = "next";
+            this.arg = undefined;
+            this.tryEntries.forEach(resetTryEntry);
+            if (!skipTempReset) {
+              for (var name in this) {
+                if (name.charAt(0) === "t" && hasOwn.call(this, name) && !isNaN(+name.slice(1))) {
+                  this[name] = undefined;
+                }
+              }
+            }
+          },
+          stop: function() {
+            this.done = true;
+            var rootEntry = this.tryEntries[0];
+            var rootRecord = rootEntry.completion;
+            if (rootRecord.type === "throw") {
+              throw rootRecord.arg;
+            }
+            return this.rval;
+          },
+          dispatchException: function(exception) {
+            if (this.done) {
+              throw exception;
+            }
+            var context = this;
+            function handle(loc, caught) {
+              record.type = "throw";
+              record.arg = exception;
+              context.next = loc;
+              if (caught) {
+                context.method = "next";
+                context.arg = undefined;
+              }
+              return !!caught;
+            }
+            for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+              var entry = this.tryEntries[i];
+              var record = entry.completion;
+              if (entry.tryLoc === "root") {
+                return handle("end");
+              }
+              if (entry.tryLoc <= this.prev) {
+                var hasCatch = hasOwn.call(entry, "catchLoc");
+                var hasFinally = hasOwn.call(entry, "finallyLoc");
+                if (hasCatch && hasFinally) {
+                  if (this.prev < entry.catchLoc) {
+                    return handle(entry.catchLoc, true);
+                  } else if (this.prev < entry.finallyLoc) {
+                    return handle(entry.finallyLoc);
+                  }
+                } else if (hasCatch) {
+                  if (this.prev < entry.catchLoc) {
+                    return handle(entry.catchLoc, true);
+                  }
+                } else if (hasFinally) {
+                  if (this.prev < entry.finallyLoc) {
+                    return handle(entry.finallyLoc);
+                  }
+                } else {
+                  throw new Error("try statement without catch or finally");
+                }
+              }
+            }
+          },
+          abrupt: function(type, arg) {
+            for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+              var entry = this.tryEntries[i];
+              if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
+                var finallyEntry = entry;
+                break;
+              }
+            }
+            if (finallyEntry && (type === "break" || type === "continue") && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc) {
+              finallyEntry = null;
+            }
+            var record = finallyEntry ? finallyEntry.completion : {};
+            record.type = type;
+            record.arg = arg;
+            if (finallyEntry) {
+              this.method = "next";
+              this.next = finallyEntry.finallyLoc;
+              return ContinueSentinel;
+            }
+            return this.complete(record);
+          },
+          complete: function(record, afterLoc) {
+            if (record.type === "throw") {
+              throw record.arg;
+            }
+            if (record.type === "break" || record.type === "continue") {
+              this.next = record.arg;
+            } else if (record.type === "return") {
+              this.rval = this.arg = record.arg;
+              this.method = "return";
+              this.next = "end";
+            } else if (record.type === "normal" && afterLoc) {
+              this.next = afterLoc;
+            }
+            return ContinueSentinel;
+          },
+          finish: function(finallyLoc) {
+            for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+              var entry = this.tryEntries[i];
+              if (entry.finallyLoc === finallyLoc) {
+                this.complete(entry.completion, entry.afterLoc);
+                resetTryEntry(entry);
+                return ContinueSentinel;
+              }
+            }
+          },
+          "catch": function(tryLoc) {
+            for (var i = this.tryEntries.length - 1; i >= 0; --i) {
+              var entry = this.tryEntries[i];
+              if (entry.tryLoc === tryLoc) {
+                var record = entry.completion;
+                if (record.type === "throw") {
+                  var thrown = record.arg;
+                  resetTryEntry(entry);
+                }
+                return thrown;
+              }
+            }
+            throw new Error("illegal catch attempt");
+          },
+          delegateYield: function(iterable, resultName, nextLoc) {
+            this.delegate = {
+              iterator: values(iterable),
+              resultName,
+              nextLoc
+            };
+            if (this.method === "next") {
+              this.arg = undefined;
+            }
+            return ContinueSentinel;
+          }
+        };
+        return exports2;
+      }(
+        // If this script is executing as a CommonJS module, use module.exports
+        // as the regeneratorRuntime namespace. Otherwise create a new empty
+        // object. Either way, the resulting object will be used to initialize
+        // the regeneratorRuntime variable at the top of this file.
+        typeof module === "object" ? module.exports : {}
+      );
+      try {
+        regeneratorRuntime = runtime;
+      } catch (accidentalStrictMode) {
+        if (typeof globalThis === "object") {
+          globalThis.regeneratorRuntime = runtime;
+        } else {
+          Function("r", "regeneratorRuntime = r")(runtime);
+        }
+      }
+    }
+  });
+
+  // node_modules/tesseract.js/src/utils/getId.js
+  var require_getId = __commonJS({
+    "node_modules/tesseract.js/src/utils/getId.js"(exports, module) {
+      module.exports = (prefix, cnt) => `${prefix}-${cnt}-${Math.random().toString(16).slice(3, 8)}`;
+    }
+  });
+
+  // node_modules/tesseract.js/src/createJob.js
+  var require_createJob = __commonJS({
+    "node_modules/tesseract.js/src/createJob.js"(exports, module) {
+      var getId = require_getId();
+      var jobCounter = 0;
+      module.exports = ({
+        id: _id,
+        action,
+        payload = {}
+      }) => {
+        let id = _id;
+        if (typeof id === "undefined") {
+          id = getId("Job", jobCounter);
+          jobCounter += 1;
+        }
+        return {
+          id,
+          action,
+          payload
+        };
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/utils/log.js
+  var require_log = __commonJS({
+    "node_modules/tesseract.js/src/utils/log.js"(exports) {
+      var logging = false;
+      exports.logging = logging;
+      exports.setLogging = (_logging) => {
+        logging = _logging;
+      };
+      exports.log = (...args) => logging ? console.log.apply(exports, args) : null;
+    }
+  });
+
+  // node_modules/tesseract.js/src/createScheduler.js
+  var require_createScheduler = __commonJS({
+    "node_modules/tesseract.js/src/createScheduler.js"(exports, module) {
+      var createJob = require_createJob();
+      var { log } = require_log();
+      var getId = require_getId();
+      var schedulerCounter = 0;
+      module.exports = () => {
+        const id = getId("Scheduler", schedulerCounter);
+        const workers = {};
+        const runningWorkers = {};
+        let jobQueue = [];
+        schedulerCounter += 1;
+        const getQueueLen = () => jobQueue.length;
+        const getNumWorkers = () => Object.keys(workers).length;
+        const dequeue = () => {
+          if (jobQueue.length !== 0) {
+            const wIds = Object.keys(workers);
+            for (let i = 0; i < wIds.length; i += 1) {
+              if (typeof runningWorkers[wIds[i]] === "undefined") {
+                jobQueue[0](workers[wIds[i]]);
+                break;
+              }
+            }
+          }
+        };
+        const queue = (action, payload) => new Promise((resolve, reject) => {
+          const job = createJob({ action, payload });
+          jobQueue.push(async (w) => {
+            jobQueue.shift();
+            runningWorkers[w.id] = job;
+            try {
+              resolve(await w[action].apply(exports, [...payload, job.id]));
+            } catch (err) {
+              reject(err);
+            } finally {
+              delete runningWorkers[w.id];
+              dequeue();
+            }
+          });
+          log(`[${id}]: Add ${job.id} to JobQueue`);
+          log(`[${id}]: JobQueue length=${jobQueue.length}`);
+          dequeue();
+        });
+        const addWorker = (w) => {
+          workers[w.id] = w;
+          log(`[${id}]: Add ${w.id}`);
+          log(`[${id}]: Number of workers=${getNumWorkers()}`);
+          dequeue();
+          return w.id;
+        };
+        const addJob = async (action, ...payload) => {
+          if (getNumWorkers() === 0) {
+            throw Error(`[${id}]: You need to have at least one worker before adding jobs`);
+          }
+          return queue(action, payload);
+        };
+        const terminate = async () => {
+          Object.keys(workers).forEach(async (wid) => {
+            await workers[wid].terminate();
+          });
+          jobQueue = [];
+        };
+        return {
+          addWorker,
+          addJob,
+          terminate,
+          getQueueLen,
+          getNumWorkers
+        };
+      };
+    }
+  });
+
+  // node_modules/is-electron/index.js
+  var require_is_electron = __commonJS({
+    "node_modules/is-electron/index.js"(exports, module) {
+      function isElectron() {
+        if (typeof window !== "undefined" && typeof window.process === "object" && window.process.type === "renderer") {
+          return true;
+        }
+        if (typeof process !== "undefined" && typeof process.versions === "object" && !!process.versions.electron) {
+          return true;
+        }
+        if (typeof navigator === "object" && typeof navigator.userAgent === "string" && navigator.userAgent.indexOf("Electron") >= 0) {
+          return true;
+        }
+        return false;
+      }
+      module.exports = isElectron;
+    }
+  });
+
+  // node_modules/tesseract.js/src/utils/getEnvironment.js
+  var require_getEnvironment = __commonJS({
+    "node_modules/tesseract.js/src/utils/getEnvironment.js"(exports, module) {
+      var isElectron = require_is_electron();
+      module.exports = (key) => {
+        const env = {};
+        if (typeof WorkerGlobalScope !== "undefined") {
+          env.type = "webworker";
+        } else if (isElectron()) {
+          env.type = "electron";
+        } else if (typeof document === "object") {
+          env.type = "browser";
+        } else if (typeof process === "object" && typeof __require === "function") {
+          env.type = "node";
+        }
+        if (typeof key === "undefined") {
+          return env;
+        }
+        return env[key];
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/utils/resolvePaths.js
+  var require_resolvePaths = __commonJS({
+    "node_modules/tesseract.js/src/utils/resolvePaths.js"(exports, module) {
+      var isBrowser = require_getEnvironment()("type") === "browser";
+      var resolveURL = isBrowser ? (s) => new URL(s, window.location.href).href : (s) => s;
+      module.exports = (options) => {
+        const opts = { ...options };
+        ["corePath", "workerPath", "langPath"].forEach((key) => {
+          if (options[key]) {
+            opts[key] = resolveURL(opts[key]);
+          }
+        });
+        return opts;
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/utils/circularize.js
+  var require_circularize = __commonJS({
+    "node_modules/tesseract.js/src/utils/circularize.js"(exports, module) {
+      module.exports = (page) => {
+        const blocks = [];
+        const paragraphs = [];
+        const lines = [];
+        const words = [];
+        const symbols = [];
+        if (page.blocks) {
+          page.blocks.forEach((block) => {
+            block.paragraphs.forEach((paragraph) => {
+              paragraph.lines.forEach((line) => {
+                line.words.forEach((word) => {
+                  word.symbols.forEach((sym) => {
+                    symbols.push({
+                      ...sym,
+                      page,
+                      block,
+                      paragraph,
+                      line,
+                      word
+                    });
+                  });
+                  words.push({
+                    ...word,
+                    page,
+                    block,
+                    paragraph,
+                    line
+                  });
+                });
+                lines.push({
+                  ...line,
+                  page,
+                  block,
+                  paragraph
+                });
+              });
+              paragraphs.push({
+                ...paragraph,
+                page,
+                block
+              });
+            });
+            blocks.push({
+              ...block,
+              page
+            });
+          });
+        }
+        return {
+          ...page,
+          blocks,
+          paragraphs,
+          lines,
+          words,
+          symbols
+        };
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/constants/OEM.js
+  var require_OEM = __commonJS({
+    "node_modules/tesseract.js/src/constants/OEM.js"(exports, module) {
+      module.exports = {
+        TESSERACT_ONLY: 0,
+        LSTM_ONLY: 1,
+        TESSERACT_LSTM_COMBINED: 2,
+        DEFAULT: 3
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/package.json
+  var require_package = __commonJS({
+    "node_modules/tesseract.js/package.json"(exports, module) {
+      module.exports = {
+        name: "tesseract.js",
+        version: "5.1.1",
+        description: "Pure Javascript Multilingual OCR",
+        main: "src/index.js",
+        types: "src/index.d.ts",
+        unpkg: "dist/tesseract.min.js",
+        jsdelivr: "dist/tesseract.min.js",
+        scripts: {
+          start: "node scripts/server.js",
+          build: "rimraf dist && webpack --config scripts/webpack.config.prod.js && rollup -c scripts/rollup.esm.mjs",
+          "profile:tesseract": "webpack-bundle-analyzer dist/tesseract-stats.json",
+          "profile:worker": "webpack-bundle-analyzer dist/worker-stats.json",
+          prepublishOnly: "npm run build",
+          wait: "rimraf dist && wait-on http://localhost:3000/dist/tesseract.min.js",
+          test: "npm-run-all -p -r start test:all",
+          "test:all": "npm-run-all wait test:browser:* test:node:all",
+          "test:node": "nyc mocha --exit --bail --require ./scripts/test-helper.js",
+          "test:node:all": "npm run test:node -- ./tests/*.test.js",
+          "test:browser-tpl": "mocha-headless-chrome -a incognito -a no-sandbox -a disable-setuid-sandbox -a disable-logging -t 300000",
+          "test:browser:detect": "npm run test:browser-tpl -- -f ./tests/detect.test.html",
+          "test:browser:recognize": "npm run test:browser-tpl -- -f ./tests/recognize.test.html",
+          "test:browser:scheduler": "npm run test:browser-tpl -- -f ./tests/scheduler.test.html",
+          "test:browser:FS": "npm run test:browser-tpl -- -f ./tests/FS.test.html",
+          lint: "eslint src",
+          "lint:fix": "eslint --fix src",
+          postinstall: "opencollective-postinstall || true"
+        },
+        browser: {
+          "./src/worker/node/index.js": "./src/worker/browser/index.js"
+        },
+        author: "",
+        contributors: [
+          "jeromewu"
+        ],
+        license: "Apache-2.0",
+        devDependencies: {
+          "@babel/core": "^7.21.4",
+          "@babel/eslint-parser": "^7.21.3",
+          "@babel/preset-env": "^7.21.4",
+          "@rollup/plugin-commonjs": "^24.1.0",
+          acorn: "^8.8.2",
+          "babel-loader": "^9.1.2",
+          buffer: "^6.0.3",
+          cors: "^2.8.5",
+          eslint: "^7.32.0",
+          "eslint-config-airbnb-base": "^14.2.1",
+          "eslint-plugin-import": "^2.27.5",
+          "expect.js": "^0.3.1",
+          express: "^4.18.2",
+          mocha: "^10.2.0",
+          "mocha-headless-chrome": "^4.0.0",
+          "npm-run-all": "^4.1.5",
+          nyc: "^15.1.0",
+          rimraf: "^5.0.0",
+          rollup: "^3.20.7",
+          "wait-on": "^7.0.1",
+          webpack: "^5.79.0",
+          "webpack-bundle-analyzer": "^4.8.0",
+          "webpack-cli": "^5.0.1",
+          "webpack-dev-middleware": "^6.0.2",
+          "rollup-plugin-sourcemaps": "^0.6.3"
+        },
+        dependencies: {
+          "bmp-js": "^0.1.0",
+          "idb-keyval": "^6.2.0",
+          "is-electron": "^2.2.2",
+          "is-url": "^1.2.4",
+          "node-fetch": "^2.6.9",
+          "opencollective-postinstall": "^2.0.3",
+          "regenerator-runtime": "^0.13.3",
+          "tesseract.js-core": "^5.1.1",
+          "wasm-feature-detect": "^1.2.11",
+          zlibjs: "^0.3.1"
+        },
+        overrides: {
+          "@rollup/pluginutils": "^5.0.2"
+        },
+        repository: {
+          type: "git",
+          url: "https://github.com/naptha/tesseract.js.git"
+        },
+        bugs: {
+          url: "https://github.com/naptha/tesseract.js/issues"
+        },
+        homepage: "https://github.com/naptha/tesseract.js",
+        collective: {
+          type: "opencollective",
+          url: "https://opencollective.com/tesseractjs"
+        }
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/constants/defaultOptions.js
+  var require_defaultOptions = __commonJS({
+    "node_modules/tesseract.js/src/constants/defaultOptions.js"(exports, module) {
+      module.exports = {
+        /*
+         * Use BlobURL for worker script by default
+         * TODO: remove this option
+         *
+         */
+        workerBlobURL: true,
+        logger: () => {
+        }
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/worker/browser/defaultOptions.js
+  var require_defaultOptions2 = __commonJS({
+    "node_modules/tesseract.js/src/worker/browser/defaultOptions.js"(exports, module) {
+      var version = require_package().version;
+      var defaultOptions = require_defaultOptions();
+      module.exports = {
+        ...defaultOptions,
+        workerPath: `https://cdn.jsdelivr.net/npm/tesseract.js@v${version}/dist/worker.min.js`
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/worker/browser/spawnWorker.js
+  var require_spawnWorker = __commonJS({
+    "node_modules/tesseract.js/src/worker/browser/spawnWorker.js"(exports, module) {
+      module.exports = ({ workerPath, workerBlobURL }) => {
+        let worker;
+        if (Blob && URL && workerBlobURL) {
+          const blob = new Blob([`importScripts("${workerPath}");`], {
+            type: "application/javascript"
+          });
+          worker = new Worker(URL.createObjectURL(blob));
+        } else {
+          worker = new Worker(workerPath);
+        }
+        return worker;
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/worker/browser/terminateWorker.js
+  var require_terminateWorker = __commonJS({
+    "node_modules/tesseract.js/src/worker/browser/terminateWorker.js"(exports, module) {
+      module.exports = (worker) => {
+        worker.terminate();
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/worker/browser/onMessage.js
+  var require_onMessage = __commonJS({
+    "node_modules/tesseract.js/src/worker/browser/onMessage.js"(exports, module) {
+      module.exports = (worker, handler) => {
+        worker.onmessage = ({ data }) => {
+          handler(data);
+        };
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/worker/browser/send.js
+  var require_send = __commonJS({
+    "node_modules/tesseract.js/src/worker/browser/send.js"(exports, module) {
+      module.exports = async (worker, packet) => {
+        worker.postMessage(packet);
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/worker/browser/loadImage.js
+  var require_loadImage = __commonJS({
+    "node_modules/tesseract.js/src/worker/browser/loadImage.js"(exports, module) {
+      var readFromBlobOrFile = (blob) => new Promise((resolve, reject) => {
+        const fileReader = new FileReader();
+        fileReader.onload = () => {
+          resolve(fileReader.result);
+        };
+        fileReader.onerror = ({ target: { error: { code } } }) => {
+          reject(Error(`File could not be read! Code=${code}`));
+        };
+        fileReader.readAsArrayBuffer(blob);
+      });
+      var loadImage = async (image) => {
+        let data = image;
+        if (typeof image === "undefined") {
+          return "undefined";
+        }
+        if (typeof image === "string") {
+          if (/data:image\/([a-zA-Z]*);base64,([^"]*)/.test(image)) {
+            data = atob(image.split(",")[1]).split("").map((c) => c.charCodeAt(0));
+          } else {
+            const resp = await fetch(image);
+            data = await resp.arrayBuffer();
+          }
+        } else if (typeof HTMLElement !== "undefined" && image instanceof HTMLElement) {
+          if (image.tagName === "IMG") {
+            data = await loadImage(image.src);
+          }
+          if (image.tagName === "VIDEO") {
+            data = await loadImage(image.poster);
+          }
+          if (image.tagName === "CANVAS") {
+            await new Promise((resolve) => {
+              image.toBlob(async (blob) => {
+                data = await readFromBlobOrFile(blob);
+                resolve();
+              });
+            });
+          }
+        } else if (typeof OffscreenCanvas !== "undefined" && image instanceof OffscreenCanvas) {
+          const blob = await image.convertToBlob();
+          data = await readFromBlobOrFile(blob);
+        } else if (image instanceof File || image instanceof Blob) {
+          data = await readFromBlobOrFile(image);
+        }
+        return new Uint8Array(data);
+      };
+      module.exports = loadImage;
+    }
+  });
+
+  // node_modules/tesseract.js/src/worker/browser/index.js
+  var require_browser = __commonJS({
+    "node_modules/tesseract.js/src/worker/browser/index.js"(exports, module) {
+      var defaultOptions = require_defaultOptions2();
+      var spawnWorker = require_spawnWorker();
+      var terminateWorker = require_terminateWorker();
+      var onMessage = require_onMessage();
+      var send = require_send();
+      var loadImage = require_loadImage();
+      module.exports = {
+        defaultOptions,
+        spawnWorker,
+        terminateWorker,
+        onMessage,
+        send,
+        loadImage
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/createWorker.js
+  var require_createWorker = __commonJS({
+    "node_modules/tesseract.js/src/createWorker.js"(exports, module) {
+      var resolvePaths = require_resolvePaths();
+      var circularize = require_circularize();
+      var createJob = require_createJob();
+      var { log } = require_log();
+      var getId = require_getId();
+      var OEM = require_OEM();
+      var {
+        defaultOptions,
+        spawnWorker,
+        terminateWorker,
+        onMessage,
+        loadImage,
+        send
+      } = require_browser();
+      var workerCounter = 0;
+      module.exports = async (langs = "eng", oem = OEM.LSTM_ONLY, _options = {}, config = {}) => {
+        const id = getId("Worker", workerCounter);
+        const {
+          logger,
+          errorHandler,
+          ...options
+        } = resolvePaths({
+          ...defaultOptions,
+          ..._options
+        });
+        const resolves = {};
+        const rejects = {};
+        const currentLangs = typeof langs === "string" ? langs.split("+") : langs;
+        let currentOem = oem;
+        let currentConfig = config;
+        const lstmOnlyCore = [OEM.DEFAULT, OEM.LSTM_ONLY].includes(oem) && !options.legacyCore;
+        let workerResReject;
+        let workerResResolve;
+        const workerRes = new Promise((resolve, reject) => {
+          workerResResolve = resolve;
+          workerResReject = reject;
+        });
+        const workerError = (event) => {
+          workerResReject(event.message);
+        };
+        let worker = spawnWorker(options);
+        worker.onerror = workerError;
+        workerCounter += 1;
+        const setResolve = (promiseId, res) => {
+          resolves[promiseId] = res;
+        };
+        const setReject = (promiseId, rej) => {
+          rejects[promiseId] = rej;
+        };
+        const startJob = ({ id: jobId, action, payload }) => new Promise((resolve, reject) => {
+          log(`[${id}]: Start ${jobId}, action=${action}`);
+          const promiseId = `${action}-${jobId}`;
+          setResolve(promiseId, resolve);
+          setReject(promiseId, reject);
+          send(worker, {
+            workerId: id,
+            jobId,
+            action,
+            payload
+          });
+        });
+        const load = () => console.warn("`load` is depreciated and should be removed from code (workers now come pre-loaded)");
+        const loadInternal = (jobId) => startJob(createJob({
+          id: jobId,
+          action: "load",
+          payload: { options: { lstmOnly: lstmOnlyCore, corePath: options.corePath, logging: options.logging } }
+        }));
+        const writeText = (path, text, jobId) => startJob(createJob({
+          id: jobId,
+          action: "FS",
+          payload: { method: "writeFile", args: [path, text] }
+        }));
+        const readText = (path, jobId) => startJob(createJob({
+          id: jobId,
+          action: "FS",
+          payload: { method: "readFile", args: [path, { encoding: "utf8" }] }
+        }));
+        const removeFile = (path, jobId) => startJob(createJob({
+          id: jobId,
+          action: "FS",
+          payload: { method: "unlink", args: [path] }
+        }));
+        const FS = (method, args, jobId) => startJob(createJob({
+          id: jobId,
+          action: "FS",
+          payload: { method, args }
+        }));
+        const loadLanguage = () => console.warn("`loadLanguage` is depreciated and should be removed from code (workers now come with language pre-loaded)");
+        const loadLanguageInternal = (_langs, jobId) => startJob(createJob({
+          id: jobId,
+          action: "loadLanguage",
+          payload: {
+            langs: _langs,
+            options: {
+              langPath: options.langPath,
+              dataPath: options.dataPath,
+              cachePath: options.cachePath,
+              cacheMethod: options.cacheMethod,
+              gzip: options.gzip,
+              lstmOnly: [OEM.DEFAULT, OEM.LSTM_ONLY].includes(currentOem) && !options.legacyLang
+            }
+          }
+        }));
+        const initialize = () => console.warn("`initialize` is depreciated and should be removed from code (workers now come pre-initialized)");
+        const initializeInternal = (_langs, _oem, _config, jobId) => startJob(createJob({
+          id: jobId,
+          action: "initialize",
+          payload: { langs: _langs, oem: _oem, config: _config }
+        }));
+        const reinitialize = (langs2 = "eng", oem2, config2, jobId) => {
+          if (lstmOnlyCore && [OEM.TESSERACT_ONLY, OEM.TESSERACT_LSTM_COMBINED].includes(oem2))
+            throw Error("Legacy model requested but code missing.");
+          const _oem = oem2 || currentOem;
+          currentOem = _oem;
+          const _config = config2 || currentConfig;
+          currentConfig = _config;
+          const langsArr = typeof langs2 === "string" ? langs2.split("+") : langs2;
+          const _langs = langsArr.filter((x) => !currentLangs.includes(x));
+          currentLangs.push(..._langs);
+          if (_langs.length > 0) {
+            return loadLanguageInternal(_langs, jobId).then(() => initializeInternal(langs2, _oem, _config, jobId));
+          }
+          return initializeInternal(langs2, _oem, _config, jobId);
+        };
+        const setParameters = (params = {}, jobId) => startJob(createJob({
+          id: jobId,
+          action: "setParameters",
+          payload: { params }
+        }));
+        const recognize = async (image, opts = {}, output = {
+          blocks: true,
+          text: true,
+          hocr: true,
+          tsv: true
+        }, jobId) => startJob(createJob({
+          id: jobId,
+          action: "recognize",
+          payload: { image: await loadImage(image), options: opts, output }
+        }));
+        const getPDF = (title = "Tesseract OCR Result", textonly = false, jobId) => {
+          console.log("`getPDF` function is depreciated. `recognize` option `savePDF` should be used instead.");
+          return startJob(createJob({
+            id: jobId,
+            action: "getPDF",
+            payload: { title, textonly }
+          }));
+        };
+        const detect = async (image, jobId) => {
+          if (lstmOnlyCore)
+            throw Error("`worker.detect` requires Legacy model, which was not loaded.");
+          return startJob(createJob({
+            id: jobId,
+            action: "detect",
+            payload: { image: await loadImage(image) }
+          }));
+        };
+        const terminate = async () => {
+          if (worker !== null) {
+            terminateWorker(worker);
+            worker = null;
+          }
+          return Promise.resolve();
+        };
+        onMessage(worker, ({
+          workerId,
+          jobId,
+          status,
+          action,
+          data
+        }) => {
+          const promiseId = `${action}-${jobId}`;
+          if (status === "resolve") {
+            log(`[${workerId}]: Complete ${jobId}`);
+            let d = data;
+            if (action === "recognize") {
+              d = circularize(data);
+            } else if (action === "getPDF") {
+              d = Array.from({ ...data, length: Object.keys(data).length });
+            }
+            resolves[promiseId]({ jobId, data: d });
+          } else if (status === "reject") {
+            rejects[promiseId](data);
+            if (action === "load")
+              workerResReject(data);
+            if (errorHandler) {
+              errorHandler(data);
+            } else {
+              throw Error(data);
+            }
+          } else if (status === "progress") {
+            logger({ ...data, userJobId: jobId });
+          }
+        });
+        const resolveObj = {
+          id,
+          worker,
+          setResolve,
+          setReject,
+          load,
+          writeText,
+          readText,
+          removeFile,
+          FS,
+          loadLanguage,
+          initialize,
+          reinitialize,
+          setParameters,
+          recognize,
+          getPDF,
+          detect,
+          terminate
+        };
+        loadInternal().then(() => loadLanguageInternal(langs)).then(() => initializeInternal(langs, oem, config)).then(() => workerResResolve(resolveObj)).catch(() => {
+        });
+        return workerRes;
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/Tesseract.js
+  var require_Tesseract = __commonJS({
+    "node_modules/tesseract.js/src/Tesseract.js"(exports, module) {
+      var createWorker = require_createWorker();
+      var recognize = async (image, langs, options) => {
+        const worker = await createWorker(langs, 1, options);
+        return worker.recognize(image).finally(async () => {
+          await worker.terminate();
+        });
+      };
+      var detect = async (image, options) => {
+        const worker = await createWorker("osd", 0, options);
+        return worker.detect(image).finally(async () => {
+          await worker.terminate();
+        });
+      };
+      module.exports = {
+        recognize,
+        detect
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/constants/languages.js
+  var require_languages = __commonJS({
+    "node_modules/tesseract.js/src/constants/languages.js"(exports, module) {
+      module.exports = {
+        AFR: "afr",
+        AMH: "amh",
+        ARA: "ara",
+        ASM: "asm",
+        AZE: "aze",
+        AZE_CYRL: "aze_cyrl",
+        BEL: "bel",
+        BEN: "ben",
+        BOD: "bod",
+        BOS: "bos",
+        BUL: "bul",
+        CAT: "cat",
+        CEB: "ceb",
+        CES: "ces",
+        CHI_SIM: "chi_sim",
+        CHI_TRA: "chi_tra",
+        CHR: "chr",
+        CYM: "cym",
+        DAN: "dan",
+        DEU: "deu",
+        DZO: "dzo",
+        ELL: "ell",
+        ENG: "eng",
+        ENM: "enm",
+        EPO: "epo",
+        EST: "est",
+        EUS: "eus",
+        FAS: "fas",
+        FIN: "fin",
+        FRA: "fra",
+        FRK: "frk",
+        FRM: "frm",
+        GLE: "gle",
+        GLG: "glg",
+        GRC: "grc",
+        GUJ: "guj",
+        HAT: "hat",
+        HEB: "heb",
+        HIN: "hin",
+        HRV: "hrv",
+        HUN: "hun",
+        IKU: "iku",
+        IND: "ind",
+        ISL: "isl",
+        ITA: "ita",
+        ITA_OLD: "ita_old",
+        JAV: "jav",
+        JPN: "jpn",
+        KAN: "kan",
+        KAT: "kat",
+        KAT_OLD: "kat_old",
+        KAZ: "kaz",
+        KHM: "khm",
+        KIR: "kir",
+        KOR: "kor",
+        KUR: "kur",
+        LAO: "lao",
+        LAT: "lat",
+        LAV: "lav",
+        LIT: "lit",
+        MAL: "mal",
+        MAR: "mar",
+        MKD: "mkd",
+        MLT: "mlt",
+        MSA: "msa",
+        MYA: "mya",
+        NEP: "nep",
+        NLD: "nld",
+        NOR: "nor",
+        ORI: "ori",
+        PAN: "pan",
+        POL: "pol",
+        POR: "por",
+        PUS: "pus",
+        RON: "ron",
+        RUS: "rus",
+        SAN: "san",
+        SIN: "sin",
+        SLK: "slk",
+        SLV: "slv",
+        SPA: "spa",
+        SPA_OLD: "spa_old",
+        SQI: "sqi",
+        SRP: "srp",
+        SRP_LATN: "srp_latn",
+        SWA: "swa",
+        SWE: "swe",
+        SYR: "syr",
+        TAM: "tam",
+        TEL: "tel",
+        TGK: "tgk",
+        TGL: "tgl",
+        THA: "tha",
+        TIR: "tir",
+        TUR: "tur",
+        UIG: "uig",
+        UKR: "ukr",
+        URD: "urd",
+        UZB: "uzb",
+        UZB_CYRL: "uzb_cyrl",
+        VIE: "vie",
+        YID: "yid"
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/constants/PSM.js
+  var require_PSM = __commonJS({
+    "node_modules/tesseract.js/src/constants/PSM.js"(exports, module) {
+      module.exports = {
+        OSD_ONLY: "0",
+        AUTO_OSD: "1",
+        AUTO_ONLY: "2",
+        AUTO: "3",
+        SINGLE_COLUMN: "4",
+        SINGLE_BLOCK_VERT_TEXT: "5",
+        SINGLE_BLOCK: "6",
+        SINGLE_LINE: "7",
+        SINGLE_WORD: "8",
+        CIRCLE_WORD: "9",
+        SINGLE_CHAR: "10",
+        SPARSE_TEXT: "11",
+        SPARSE_TEXT_OSD: "12",
+        RAW_LINE: "13"
+      };
+    }
+  });
+
+  // node_modules/tesseract.js/src/index.js
+  var require_src = __commonJS({
+    "node_modules/tesseract.js/src/index.js"(exports, module) {
+      require_runtime();
+      var createScheduler = require_createScheduler();
+      var createWorker = require_createWorker();
+      var Tesseract2 = require_Tesseract();
+      var languages = require_languages();
+      var OEM = require_OEM();
+      var PSM = require_PSM();
+      var { setLogging } = require_log();
+      module.exports = {
+        languages,
+        OEM,
+        PSM,
+        createScheduler,
+        createWorker,
+        setLogging,
+        ...Tesseract2
+      };
+    }
+  });
+
+  // lib/image-processor.js
+  var ImageProcessor = class {
+    constructor() {
+      this.canvas = document.createElement("canvas");
+      this.ctx = this.canvas.getContext("2d");
+    }
+    async preprocess(sourceCanvas) {
+      const width = sourceCanvas.width;
+      const height = sourceCanvas.height;
+      this.canvas.width = width;
+      this.canvas.height = height;
+      this.ctx.drawImage(sourceCanvas, 0, 0);
+      const imageData = this.ctx.getImageData(0, 0, width, height);
+      const data = imageData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+        data[i] = gray;
+        data[i + 1] = gray;
+        data[i + 2] = gray;
+      }
+      this.adjustContrast(data, 1.5);
+      this.ctx.putImageData(imageData, 0, 0);
+      return this.canvas;
+    }
+    adjustContrast(data, factor) {
+      const intercept = 128 * (1 - factor);
+      for (let i = 0; i < data.length; i += 4) {
+        data[i] = this.clamp(data[i] * factor + intercept);
+        data[i + 1] = this.clamp(data[i + 1] * factor + intercept);
+        data[i + 2] = this.clamp(data[i + 2] * factor + intercept);
+      }
+    }
+    clamp(value) {
+      return Math.max(0, Math.min(255, value));
+    }
+    async extractCells(sourceCanvas, gridSize) {
+      const gridBounds = this.detectGrid(sourceCanvas);
+      const cells = [];
+      const cellWidth = gridBounds.width / gridSize;
+      const cellHeight = gridBounds.height / gridSize;
+      for (let row = 0; row < gridSize; row++) {
+        for (let col = 0; col < gridSize; col++) {
+          const x = gridBounds.x + col * cellWidth;
+          const y = gridBounds.y + row * cellHeight;
+          const cellCanvas = this.extractCell(sourceCanvas, x, y, cellWidth, cellHeight);
+          const isBlack = this.isCellBlack(cellCanvas);
+          cells.push({
+            canvas: cellCanvas,
+            isBlack,
+            row,
+            col
+          });
+        }
+      }
+      return cells;
+    }
+    detectGrid(sourceCanvas) {
+      const width = sourceCanvas.width;
+      const height = sourceCanvas.height;
+      const ctx = sourceCanvas.getContext("2d");
+      const imageData = ctx.getImageData(0, 0, width, height);
+      const data = imageData.data;
+      const horizontalProfile = new Array(height).fill(0);
+      const verticalProfile = new Array(width).fill(0);
+      for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+          const idx = (y * width + x) * 4;
+          const gray = data[idx];
+          if (gray < 128) {
+            horizontalProfile[y]++;
+            verticalProfile[x]++;
+          }
+        }
+      }
+      const horizontalPeaks = this.findPeaks(horizontalProfile, height * 0.1);
+      const verticalPeaks = this.findPeaks(verticalProfile, width * 0.1);
+      let gridBounds;
+      if (horizontalPeaks.length >= 2 && verticalPeaks.length >= 2) {
+        const top = Math.min(...horizontalPeaks);
+        const bottom = Math.max(...horizontalPeaks);
+        const left = Math.min(...verticalPeaks);
+        const right = Math.max(...verticalPeaks);
+        gridBounds = {
+          x: left,
+          y: top,
+          width: right - left,
+          height: bottom - top
+        };
+      } else {
+        const margin = Math.min(width, height) * 0.05;
+        const size = Math.min(width, height) - margin * 2;
+        gridBounds = {
+          x: (width - size) / 2,
+          y: (height - size) / 2,
+          width: size,
+          height: size
+        };
+      }
+      return gridBounds;
+    }
+    findPeaks(profile, threshold) {
+      const peaks = [];
+      const smoothed = this.smoothArray(profile, 5);
+      for (let i = 1; i < smoothed.length - 1; i++) {
+        if (smoothed[i] > threshold && smoothed[i] > smoothed[i - 1] && smoothed[i] > smoothed[i + 1]) {
+          peaks.push(i);
+        }
+      }
+      return peaks;
+    }
+    smoothArray(arr, windowSize) {
+      const result = [];
+      const halfWindow = Math.floor(windowSize / 2);
+      for (let i = 0; i < arr.length; i++) {
+        let sum = 0;
+        let count = 0;
+        for (let j = Math.max(0, i - halfWindow); j <= Math.min(arr.length - 1, i + halfWindow); j++) {
+          sum += arr[j];
+          count++;
+        }
+        result.push(sum / count);
+      }
+      return result;
+    }
+    extractCell(sourceCanvas, x, y, width, height) {
+      const padding = Math.min(width, height) * 0.1;
+      const cellCanvas = document.createElement("canvas");
+      cellCanvas.width = Math.floor(width - padding * 2);
+      cellCanvas.height = Math.floor(height - padding * 2);
+      const ctx = cellCanvas.getContext("2d");
+      ctx.drawImage(
+        sourceCanvas,
+        x + padding,
+        y + padding,
+        width - padding * 2,
+        height - padding * 2,
+        0,
+        0,
+        cellCanvas.width,
+        cellCanvas.height
+      );
+      return cellCanvas;
+    }
+    isCellBlack(cellCanvas) {
+      const ctx = cellCanvas.getContext("2d");
+      const imageData = ctx.getImageData(0, 0, cellCanvas.width, cellCanvas.height);
+      const data = imageData.data;
+      let darkPixels = 0;
+      const totalPixels = data.length / 4;
+      for (let i = 0; i < data.length; i += 4) {
+        const gray = (data[i] + data[i + 1] + data[i + 2]) / 3;
+        if (gray < 50) {
+          darkPixels++;
+        }
+      }
+      return darkPixels / totalPixels > 0.7;
+    }
+    resizeTo28x28(sourceCanvas) {
+      const targetCanvas = document.createElement("canvas");
+      targetCanvas.width = 28;
+      targetCanvas.height = 28;
+      const ctx = targetCanvas.getContext("2d");
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, 28, 28);
+      const srcCtx = sourceCanvas.getContext("2d");
+      const srcData = srcCtx.getImageData(0, 0, sourceCanvas.width, sourceCanvas.height);
+      const bounds = this.findContentBounds(srcData);
+      if (!bounds) {
+        return ctx.getImageData(0, 0, 28, 28);
+      }
+      const padding = 4;
+      const availableSize = 28 - padding * 2;
+      const srcWidth = bounds.right - bounds.left;
+      const srcHeight = bounds.bottom - bounds.top;
+      const scale = Math.min(availableSize / srcWidth, availableSize / srcHeight);
+      const scaledWidth = srcWidth * scale;
+      const scaledHeight = srcHeight * scale;
+      const offsetX = (28 - scaledWidth) / 2;
+      const offsetY = (28 - scaledHeight) / 2;
+      ctx.drawImage(
+        sourceCanvas,
+        bounds.left,
+        bounds.top,
+        srcWidth,
+        srcHeight,
+        offsetX,
+        offsetY,
+        scaledWidth,
+        scaledHeight
+      );
+      const finalData = ctx.getImageData(0, 0, 28, 28);
+      const data = finalData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+        data[i] = gray;
+        data[i + 1] = gray;
+        data[i + 2] = gray;
+      }
+      return finalData;
+    }
+    findContentBounds(imageData) {
+      const width = imageData.width;
+      const height = imageData.height;
+      const data = imageData.data;
+      let minX = width, minY = height, maxX = 0, maxY = 0;
+      let hasContent = false;
+      for (let y = 0; y < height; y++) {
+        for (let x = 0; x < width; x++) {
+          const idx = (y * width + x) * 4;
+          const gray = (data[idx] + data[idx + 1] + data[idx + 2]) / 3;
+          if (gray < 200) {
+            hasContent = true;
+            minX = Math.min(minX, x);
+            minY = Math.min(minY, y);
+            maxX = Math.max(maxX, x);
+            maxY = Math.max(maxY, y);
+          }
+        }
+      }
+      if (!hasContent)
+        return null;
+      return {
+        left: minX,
+        top: minY,
+        right: maxX + 1,
+        bottom: maxY + 1
+      };
+    }
+  };
+
+  // lib/ocr-worker.js
+  var import_tesseract = __toESM(require_src());
+  var OCRWorker = class {
+    constructor() {
+      this.worker = null;
+      this.initialized = false;
+    }
+    async initialize() {
+      if (this.initialized)
+        return;
+      try {
+        this.worker = await import_tesseract.default.createWorker("eng", 1, {
+          logger: (m) => {
+            if (m.status === "recognizing text") {
+              console.log(`OCR Progress: ${Math.round(m.progress * 100)}%`);
+            }
+          }
+        });
+        await this.worker.setParameters({
+          tessedit_char_whitelist: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+          tessedit_pageseg_mode: "10"
+        });
+        this.initialized = true;
+      } catch (err) {
+        throw new Error(`Failed to initialize OCR: ${err.message || err}`);
+      }
+    }
+    async recognizeChar(cellCanvas) {
+      if (!this.initialized) {
+        await this.initialize();
+      }
+      try {
+        const preprocessed = this.preprocessForOCR(cellCanvas);
+        const { data } = await this.worker.recognize(preprocessed);
+        let letter = data.text.trim().toUpperCase();
+        letter = letter.replace(/[^A-Z]/g, "");
+        if (letter.length > 1) {
+          letter = letter[0];
+        }
+        const confidence = data.confidence / 100;
+        return {
+          letter: letter || "",
+          confidence: letter ? confidence : 0
+        };
+      } catch (err) {
+        console.error("OCR error:", err);
+        return { letter: "", confidence: 0 };
+      }
+    }
+    preprocessForOCR(sourceCanvas) {
+      const canvas = document.createElement("canvas");
+      const scale = 4;
+      canvas.width = sourceCanvas.width * scale;
+      canvas.height = sourceCanvas.height * scale;
+      const ctx = canvas.getContext("2d");
+      ctx.imageSmoothingEnabled = true;
+      ctx.imageSmoothingQuality = "high";
+      ctx.fillStyle = "white";
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(sourceCanvas, 0, 0, canvas.width, canvas.height);
+      const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+      const data = imageData.data;
+      for (let i = 0; i < data.length; i += 4) {
+        const gray = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+        const binary = gray < 180 ? 0 : 255;
+        data[i] = binary;
+        data[i + 1] = binary;
+        data[i + 2] = binary;
+      }
+      ctx.putImageData(imageData, 0, 0);
+      return canvas;
+    }
+    async terminate() {
+      if (this.worker) {
+        await this.worker.terminate();
+        this.worker = null;
+        this.initialized = false;
+      }
+    }
+  };
+
+  // lib/training-store.js
+  var DB_NAME = "crossword-training-data";
+  var DB_VERSION = 1;
+  var STORE_NAME = "samples";
+  var TrainingStore = class {
+    constructor() {
+      this.db = null;
+    }
+    async open() {
+      if (this.db)
+        return this.db;
+      return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => {
+          this.db = request.result;
+          resolve(this.db);
+        };
+        request.onupgradeneeded = (event) => {
+          const db = event.target.result;
+          if (!db.objectStoreNames.contains(STORE_NAME)) {
+            const store = db.createObjectStore(STORE_NAME, {
+              keyPath: "id",
+              autoIncrement: true
+            });
+            store.createIndex("label", "label", { unique: false });
+            store.createIndex("timestamp", "timestamp", { unique: false });
+          }
+        };
+      });
+    }
+    async saveSample(sample) {
+      const db = await this.open();
+      const imageArray = Array.from(sample.imageData.data);
+      const record = {
+        imageData: imageArray,
+        width: sample.imageData.width,
+        height: sample.imageData.height,
+        label: sample.label.toUpperCase(),
+        timestamp: sample.timestamp || Date.now()
+      };
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction([STORE_NAME], "readwrite");
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.add(record);
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    }
+    async getCount() {
+      const db = await this.open();
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction([STORE_NAME], "readonly");
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.count();
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    }
+    async getAllSamples() {
+      const db = await this.open();
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction([STORE_NAME], "readonly");
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.getAll();
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    }
+    async getSamplesByLabel(label) {
+      const db = await this.open();
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction([STORE_NAME], "readonly");
+        const store = transaction.objectStore(STORE_NAME);
+        const index = store.index("label");
+        const request = index.getAll(label.toUpperCase());
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => reject(request.error);
+      });
+    }
+    async getLabelCounts() {
+      const samples = await this.getAllSamples();
+      const counts = {};
+      for (const sample of samples) {
+        counts[sample.label] = (counts[sample.label] || 0) + 1;
+      }
+      return counts;
+    }
+    async deleteSample(id) {
+      const db = await this.open();
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction([STORE_NAME], "readwrite");
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.delete(id);
+        request.onsuccess = () => resolve();
+        request.onerror = () => reject(request.error);
+      });
+    }
+    async clearAll() {
+      const db = await this.open();
+      return new Promise((resolve, reject) => {
+        const transaction = db.transaction([STORE_NAME], "readwrite");
+        const store = transaction.objectStore(STORE_NAME);
+        const request = store.clear();
+        request.onsuccess = () => resolve();
+        request.onerror = () => reject(request.error);
+      });
+    }
+  };
+
+  // lib/dataset-export.js
+  async function loadJSZip() {
+    if (typeof JSZip !== "undefined") {
+      return JSZip;
+    }
+    return new Promise((resolve, reject) => {
+      const script = document.createElement("script");
+      script.src = "https://cdn.jsdelivr.net/npm/jszip@3/dist/jszip.min.js";
+      script.onload = () => resolve(JSZip);
+      script.onerror = reject;
+      document.head.appendChild(script);
+    });
+  }
+  function imageDataToPNG(imageData) {
+    const canvas = document.createElement("canvas");
+    canvas.width = imageData.width || 28;
+    canvas.height = imageData.height || 28;
+    const ctx = canvas.getContext("2d");
+    const imgData = ctx.createImageData(canvas.width, canvas.height);
+    if (Array.isArray(imageData.imageData || imageData)) {
+      const data = imageData.imageData || imageData;
+      for (let i = 0; i < data.length; i++) {
+        imgData.data[i] = data[i];
+      }
+    } else {
+      imgData.data.set(imageData.data);
+    }
+    ctx.putImageData(imgData, 0, 0);
+    return new Promise((resolve) => {
+      canvas.toBlob(resolve, "image/png");
+    });
+  }
+  async function exportDataset(trainingStore) {
+    const JSZipLib = await loadJSZip();
+    const zip = new JSZipLib();
+    const samples = await trainingStore.getAllSamples();
+    if (samples.length === 0) {
+      throw new Error("No training samples to export");
+    }
+    const imagesFolder = zip.folder("images");
+    const labels = [];
+    for (let i = 0; i < samples.length; i++) {
+      const sample = samples[i];
+      const filename2 = `sample_${String(i).padStart(6, "0")}.png`;
+      const sampleData = {
+        imageData: sample.imageData,
+        width: sample.width,
+        height: sample.height
+      };
+      const pngBlob = await imageDataToPNG(sampleData);
+      imagesFolder.file(filename2, pngBlob);
+      labels.push({
+        filename: filename2,
+        label: sample.label,
+        timestamp: sample.timestamp
+      });
+    }
+    zip.file("labels.json", JSON.stringify(labels, null, 2));
+    const labelCounts = {};
+    for (const sample of samples) {
+      labelCounts[sample.label] = (labelCounts[sample.label] || 0) + 1;
+    }
+    const metadata = {
+      totalSamples: samples.length,
+      labelCounts,
+      imageSize: { width: 28, height: 28 },
+      format: "grayscale",
+      exportDate: (/* @__PURE__ */ new Date()).toISOString()
+    };
+    zip.file("metadata.json", JSON.stringify(metadata, null, 2));
+    const blob = await zip.generateAsync({ type: "blob" });
+    const timestamp = (/* @__PURE__ */ new Date()).toISOString().replace(/[:.]/g, "-").slice(0, 19);
+    const filename = `crossword-training-data-${timestamp}.zip`;
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
+    return { filename, sampleCount: samples.length };
+  }
+
+  // popup/popup.js
+  var PopupApp = class {
+    constructor() {
+      this.imageProcessor = new ImageProcessor();
+      this.ocrWorker = new OCRWorker();
+      this.trainingStore = new TrainingStore();
+      this.capturedImage = null;
+      this.gridData = null;
+      this.cellImages = [];
+      this.gridSize = 15;
+      this.initElements();
+      this.initEventListeners();
+      this.initWebcam();
+      this.updateTrainingStats();
+    }
+    initElements() {
+      this.statusBar = document.getElementById("status-bar");
+      this.statusMessage = document.getElementById("status-message");
+      this.webcamPreview = document.getElementById("webcam-preview");
+      this.captureCanvas = document.getElementById("capture-canvas");
+      this.imagePreview = document.getElementById("image-preview");
+      this.previewContainer = document.getElementById("preview-container");
+      this.captureBtn = document.getElementById("capture-btn");
+      this.processBtn = document.getElementById("process-btn");
+      this.retakeBtn = document.getElementById("retake-btn");
+      this.fillBtn = document.getElementById("fill-btn");
+      this.backBtn = document.getElementById("back-btn");
+      this.exportBtn = document.getElementById("export-btn");
+      this.dropzone = document.getElementById("dropzone");
+      this.fileInput = document.getElementById("file-input");
+      this.gridSection = document.getElementById("grid-section");
+      this.fillSection = document.getElementById("fill-section");
+      this.ocrGrid = document.getElementById("ocr-grid");
+      this.gridSizeSelect = document.getElementById("grid-size");
+      this.delayInput = document.getElementById("delay-input");
+      this.typingSpeedInput = document.getElementById("typing-speed");
+      this.progressContainer = document.getElementById("progress-container");
+      this.progressFill = document.getElementById("progress-fill");
+      this.progressText = document.getElementById("progress-text");
+      this.sampleCount = document.getElementById("sample-count");
+    }
+    initEventListeners() {
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => this.switchTab(e.target.dataset.tab));
+      });
+      this.captureBtn.addEventListener("click", () => this.capturePhoto());
+      this.processBtn.addEventListener("click", () => this.processImage());
+      this.retakeBtn.addEventListener("click", () => this.retake());
+      this.fillBtn.addEventListener("click", () => this.fillPuzzle());
+      this.backBtn.addEventListener("click", () => this.backToEdit());
+      this.exportBtn.addEventListener("click", () => this.exportTrainingData());
+      this.dropzone.addEventListener("click", () => this.fileInput.click());
+      this.dropzone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        this.dropzone.classList.add("dragover");
+      });
+      this.dropzone.addEventListener("dragleave", () => {
+        this.dropzone.classList.remove("dragover");
+      });
+      this.dropzone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        this.dropzone.classList.remove("dragover");
+        if (e.dataTransfer.files.length) {
+          this.handleFileUpload(e.dataTransfer.files[0]);
+        }
+      });
+      this.fileInput.addEventListener("change", (e) => {
+        if (e.target.files.length) {
+          this.handleFileUpload(e.target.files[0]);
+        }
+      });
+      this.gridSizeSelect.addEventListener("change", (e) => {
+        this.gridSize = parseInt(e.target.value);
+        if (this.capturedImage) {
+          this.processImage();
+        }
+      });
+    }
+    async initWebcam() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({
+          video: { facingMode: "environment", width: 1280, height: 720 }
+        });
+        this.webcamPreview.srcObject = stream;
+        this.webcamStream = stream;
+      } catch (err) {
+        console.error("Webcam error:", err);
+        this.showStatus("Camera not available. Use file upload instead.", "error");
+      }
+    }
+    switchTab(tabName) {
+      document.querySelectorAll(".tab-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.tab === tabName);
+      });
+      document.querySelectorAll(".tab-content").forEach((content) => {
+        content.classList.toggle("active", content.id === `${tabName}-tab`);
+      });
+    }
+    capturePhoto() {
+      const video = this.webcamPreview;
+      const canvas = this.captureCanvas;
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext("2d");
+      ctx.drawImage(video, 0, 0);
+      this.capturedImage = canvas;
+      this.showImagePreview(canvas);
+    }
+    handleFileUpload(file) {
+      if (!file.type.startsWith("image/")) {
+        this.showStatus("Please upload an image file", "error");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = new Image();
+        img.onload = () => {
+          const canvas = document.createElement("canvas");
+          canvas.width = img.width;
+          canvas.height = img.height;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(img, 0, 0);
+          this.capturedImage = canvas;
+          this.showImagePreview(canvas);
+        };
+        img.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+    showImagePreview(canvas) {
+      const preview = this.imagePreview;
+      preview.width = canvas.width;
+      preview.height = canvas.height;
+      const ctx = preview.getContext("2d");
+      ctx.drawImage(canvas, 0, 0);
+      this.previewContainer.classList.remove("hidden");
+      this.showStatus('Image captured. Click "Process Grid" to continue.', "info");
+    }
+    async processImage() {
+      if (!this.capturedImage) {
+        this.showStatus("No image captured", "error");
+        return;
+      }
+      this.showStatus("Processing image...", "processing");
+      this.processBtn.disabled = true;
+      try {
+        const preprocessed = await this.imageProcessor.preprocess(this.capturedImage);
+        this.cellImages = await this.imageProcessor.extractCells(
+          preprocessed,
+          this.gridSize
+        );
+        this.showStatus("Running OCR on cells...", "processing");
+        await this.ocrWorker.initialize();
+        this.gridData = [];
+        const totalCells = this.gridSize * this.gridSize;
+        for (let i = 0; i < this.cellImages.length; i++) {
+          const cell = this.cellImages[i];
+          if (cell.isBlack) {
+            this.gridData.push({ letter: "", isBlack: true, confidence: 1 });
+          } else {
+            const result = await this.ocrWorker.recognizeChar(cell.canvas);
+            this.gridData.push({
+              letter: result.letter,
+              isBlack: false,
+              confidence: result.confidence
+            });
+          }
+          if (i % 10 === 0) {
+            this.showStatus(`OCR: ${Math.round(i / totalCells * 100)}% complete`, "processing");
+          }
+        }
+        this.renderGrid();
+        this.showStatus("OCR complete! Review and correct any errors.", "success");
+        this.gridSection.classList.remove("hidden");
+        this.fillSection.classList.remove("hidden");
+      } catch (err) {
+        console.error("Processing error:", err);
+        this.showStatus(`Error: ${err.message || err || "Unknown error"}`, "error");
+      } finally {
+        this.processBtn.disabled = false;
+      }
+    }
+    renderGrid() {
+      this.ocrGrid.innerHTML = "";
+      this.ocrGrid.className = `ocr-grid size-${this.gridSize}`;
+      for (let i = 0; i < this.gridData.length; i++) {
+        const cell = this.gridData[i];
+        const button = document.createElement("button");
+        button.className = "grid-cell";
+        button.dataset.index = i;
+        if (cell.isBlack) {
+          button.classList.add("black");
+        } else {
+          button.textContent = cell.letter;
+          if (cell.confidence < 0.7) {
+            button.classList.add("low-confidence");
+          }
+          button.addEventListener("click", () => this.editCell(i));
+          button.addEventListener("keydown", (e) => this.handleCellKeydown(e, i));
+        }
+        this.ocrGrid.appendChild(button);
+      }
+    }
+    editCell(index) {
+      const cell = this.gridData[index];
+      if (cell.isBlack)
+        return;
+      const button = this.ocrGrid.children[index];
+      button.focus();
+    }
+    handleCellKeydown(e, index) {
+      const cell = this.gridData[index];
+      if (cell.isBlack)
+        return;
+      if (e.key.length === 1 && /[a-zA-Z]/.test(e.key)) {
+        cell.letter = e.key.toUpperCase();
+        cell.edited = true;
+        const button = this.ocrGrid.children[index];
+        button.textContent = cell.letter;
+        button.classList.add("edited");
+        button.classList.remove("low-confidence");
+        const nextIndex = index + 1;
+        if (nextIndex < this.gridData.length && !this.gridData[nextIndex].isBlack) {
+          this.ocrGrid.children[nextIndex].focus();
+        }
+        e.preventDefault();
+      } else if (e.key === "Backspace" || e.key === "Delete") {
+        cell.letter = "";
+        const button = this.ocrGrid.children[index];
+        button.textContent = "";
+        e.preventDefault();
+      } else if (e.key === " ") {
+        cell.isBlack = true;
+        const button = this.ocrGrid.children[index];
+        button.classList.add("black");
+        button.textContent = "";
+        e.preventDefault();
+      }
+    }
+    retake() {
+      this.capturedImage = null;
+      this.previewContainer.classList.add("hidden");
+      this.gridSection.classList.add("hidden");
+      this.fillSection.classList.add("hidden");
+      this.hideStatus();
+    }
+    backToEdit() {
+      this.fillSection.classList.add("hidden");
+      this.gridSection.scrollIntoView({ behavior: "smooth" });
+    }
+    async fillPuzzle() {
+      const delay = parseInt(this.delayInput.value) || 0;
+      const typingSpeed = parseInt(this.typingSpeedInput.value) || 50;
+      const letters = this.gridData.filter((cell) => !cell.isBlack).map((cell) => cell.letter || " ");
+      if (letters.length === 0) {
+        this.showStatus("No letters to fill", "error");
+        return;
+      }
+      this.fillBtn.disabled = true;
+      this.progressContainer.classList.remove("hidden");
+      try {
+        await this.saveTrainingData();
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        if (!tab.url?.includes("nytimes.com/crosswords")) {
+          this.showStatus("Please navigate to the NYT crossword page first", "error");
+          return;
+        }
+        await chrome.tabs.sendMessage(tab.id, {
+          action: "fillPuzzle",
+          letters,
+          delay: delay * 1e3,
+          typingSpeed
+        });
+        chrome.runtime.onMessage.addListener((message) => {
+          if (message.action === "fillProgress") {
+            const percent = Math.round(message.current / message.total * 100);
+            this.progressFill.style.width = `${percent}%`;
+            this.progressText.textContent = `${percent}%`;
+          } else if (message.action === "fillComplete") {
+            this.showStatus("Puzzle filled successfully!", "success");
+            this.fillBtn.disabled = false;
+          } else if (message.action === "fillError") {
+            this.showStatus(`Error: ${message.error}`, "error");
+            this.fillBtn.disabled = false;
+          }
+        });
+      } catch (err) {
+        console.error("Fill error:", err);
+        this.showStatus(`Error: ${err.message || err || "Unknown error"}`, "error");
+        this.fillBtn.disabled = false;
+      }
+    }
+    async saveTrainingData() {
+      for (let i = 0; i < this.gridData.length; i++) {
+        const cell = this.gridData[i];
+        if (cell.isBlack || !cell.letter)
+          continue;
+        const cellImage = this.cellImages[i];
+        if (!cellImage || cellImage.isBlack)
+          continue;
+        const resized = this.imageProcessor.resizeTo28x28(cellImage.canvas);
+        await this.trainingStore.saveSample({
+          imageData: resized,
+          label: cell.letter,
+          timestamp: Date.now()
+        });
+      }
+      this.updateTrainingStats();
+    }
+    async updateTrainingStats() {
+      const count = await this.trainingStore.getCount();
+      this.sampleCount.textContent = `${count} samples collected`;
+    }
+    async exportTrainingData() {
+      this.showStatus("Exporting dataset...", "processing");
+      try {
+        await exportDataset(this.trainingStore);
+        this.showStatus("Dataset exported!", "success");
+      } catch (err) {
+        console.error("Export error:", err);
+        this.showStatus(`Export error: ${err.message || err || "Unknown error"}`, "error");
+      }
+    }
+    showStatus(message, type = "info") {
+      this.statusBar.className = `status-bar ${type}`;
+      this.statusMessage.textContent = message;
+      this.statusBar.classList.remove("hidden");
+    }
+    hideStatus() {
+      this.statusBar.classList.add("hidden");
+    }
+  };
+  document.addEventListener("DOMContentLoaded", () => {
+    new PopupApp();
+  });
+})();
 //# sourceMappingURL=popup.bundle.js.map

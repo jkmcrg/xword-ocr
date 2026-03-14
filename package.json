@@ -4,7 +4,7 @@
   "description": "Chrome extension to scan paper crossword puzzles and fill them into NYT web interface",
   "scripts": {
     "build": "node build.js",
-    "watch": "node build.js --watch",
+    "dev": "node build.js --watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
