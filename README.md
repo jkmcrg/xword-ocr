@@ -69,6 +69,7 @@ Use this dataset to train a CNN on EMNIST architecture for improved accuracy.
 ```
 nyt-xword-paper-filler/
 ├── manifest.json           # Extension manifest
+├── package.json            # Node dependencies (for testing)
 ├── popup/
 │   ├── popup.html         # Extension popup UI
 │   ├── popup.css          # Styles
@@ -82,11 +83,60 @@ nyt-xword-paper-filler/
 │   ├── ocr-worker.js      # Tesseract.js wrapper
 │   ├── training-store.js  # IndexedDB storage
 │   └── dataset-export.js  # ZIP export functionality
+├── tests/
+│   ├── setup.js           # Test setup and mocks
+│   ├── unit/              # Unit tests
+│   └── integration/       # Integration tests
 ├── docs/
 │   └── PLAN.md            # Architecture & implementation plan
 └── assets/
     └── icons/             # Extension icons
 ```
+
+## Testing
+
+This project uses Jest for testing, following the testing pyramid philosophy:
+
+- **Unit tests** (`tests/unit/`) - Test individual functions and modules
+- **Integration tests** (`tests/integration/`) - Test component interactions
+
+### Running Tests
+
+```bash
+# Install dependencies
+npm install
+
+# Run all tests
+npm test
+
+# Run tests in watch mode (re-runs on file changes)
+npm run test:watch
+
+# Run tests with coverage report
+npm run test:coverage
+```
+
+### Test Structure
+
+```
+tests/
+├── setup.js                      # Test setup and mocks
+├── unit/
+│   ├── image-processor.test.js   # Image processing unit tests
+│   ├── training-store.test.js    # IndexedDB storage tests
+│   └── content-script.test.js    # Keyboard input tests
+└── integration/
+    ├── messaging.test.js         # Extension messaging tests
+    └── dataset-export.test.js    # Export functionality tests
+```
+
+### What's Tested
+
+- **Image Processor**: Clamping, smoothing, peak detection, cell extraction, black cell detection
+- **Training Store**: Sample storage, retrieval, counting, label management
+- **Content Script**: Keyboard event dispatch, fill sequencing, timing delays
+- **Messaging**: Popup-to-content communication, progress updates, error handling
+- **Export**: ZIP generation, label formatting, filename generation
 
 ## Limitations
 
