@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "Chrome extension to scan paper crossword puzzles and fill them into NYT web interface",
   "scripts": {
+    "build": "node build.js",
+    "watch": "node build.js --watch",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
   },
+  "dependencies": {
+    "tesseract.js": "^5.1.0"
+  },
   "devDependencies": {
+    "esbuild": "^0.20.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0"
   },

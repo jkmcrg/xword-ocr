@@ -18,12 +18,33 @@ A Chrome extension that scans your completed paper crossword puzzles and automat
 
 ## Installation
 
-1. Clone or download this repository
-2. (Optional) Add icon files to `assets/icons/` (icon16.png, icon48.png, icon128.png)
-3. Open Chrome and navigate to `chrome://extensions/`
-4. Enable "Developer mode" in the top right
-5. Click "Load unpacked" and select the extension folder
-6. The extension icon will appear in your toolbar
+### Prerequisites
+- Node.js (v18+)
+- npm
+
+### Build & Install
+
+```bash
+# Install dependencies
+npm install
+
+# Build the extension
+npm run build
+```
+
+### Load in Chrome
+
+1. Open Chrome and navigate to `chrome://extensions/`
+2. Enable "Developer mode" in the top right
+3. Click "Load unpacked" and select this project folder
+4. The extension icon will appear in your toolbar
+
+### Development Mode
+
+```bash
+# Watch for changes and rebuild automatically
+npm run watch
+```
 
 ## Usage
 

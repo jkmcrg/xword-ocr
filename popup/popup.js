@@ -216,7 +216,7 @@ class PopupApp {
       
     } catch (err) {
       console.error('Processing error:', err);
-      this.showStatus(`Error: ${err.message}`, 'error');
+      this.showStatus(`Error: ${err.message || err || 'Unknown error'}`, 'error');
     } finally {
       this.processBtn.disabled = false;
     }
@@ -349,7 +349,7 @@ class PopupApp {
 
     } catch (err) {
       console.error('Fill error:', err);
-      this.showStatus(`Error: ${err.message}`, 'error');
+      this.showStatus(`Error: ${err.message || err || 'Unknown error'}`, 'error');
       this.fillBtn.disabled = false;
     }
   }
@@ -386,7 +386,7 @@ class PopupApp {
       this.showStatus('Dataset exported!', 'success');
     } catch (err) {
       console.error('Export error:', err);
-      this.showStatus(`Export error: ${err.message}`, 'error');
+      this.showStatus(`Export error: ${err.message || err || 'Unknown error'}`, 'error');
     }
   }
 
