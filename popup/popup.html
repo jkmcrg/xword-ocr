@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NYT Crossword Paper Filler</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Crossword Filler</h1>
+    </header>
+
+    <div id="status-bar" class="status-bar hidden">
+      <span id="status-message"></span>
+    </div>
+
+    <section id="capture-section" class="section">
+      <div class="tabs">
+        <button class="tab-btn active" data-tab="webcam">Camera</button>
+        <button class="tab-btn" data-tab="upload">Upload</button>
+      </div>
+
+      <div id="webcam-tab" class="tab-content active">
+        <div class="video-container">
+          <video id="webcam-preview" autoplay playsinline></video>
+          <canvas id="capture-canvas" class="hidden"></canvas>
+        </div>
+        <button id="capture-btn" class="btn primary">Capture Photo</button>
+      </div>
+
+      <div id="upload-tab" class="tab-content">
+        <div id="dropzone" class="dropzone">
+          <p>Drop image here or click to select</p>
+          <input type="file" id="file-input" accept="image/*" class="hidden">
+        </div>
+      </div>
+
+      <div id="preview-container" class="hidden">
+        <h3>Captured Image</h3>
+        <div class="image-preview-wrapper">
+          <canvas id="image-preview"></canvas>
+        </div>
+        <div class="preview-actions">
+          <button id="process-btn" class="btn primary">Process Grid</button>
+          <button id="retake-btn" class="btn secondary">Retake</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="grid-section" class="section hidden">
+      <h3>Review OCR Results</h3>
+      <p class="help-text">Click any cell to correct. Black cells are auto-detected.</p>
+      
+      <div id="grid-container">
+        <div id="ocr-grid" class="ocr-grid"></div>
+      </div>
+
+      <div class="grid-controls">
+        <label>
+          Grid Size:
+          <select id="grid-size">
+            <option value="15">15x15 (Daily)</option>
+            <option value="21">21x21 (Sunday)</option>
+          </select>
+        </label>
+      </div>
+    </section>
+
+    <section id="fill-section" class="section hidden">
+      <h3>Fill Settings</h3>
+      
+      <div class="setting">
+        <label for="delay-input">Delay before last character (seconds):</label>
+        <input type="number" id="delay-input" min="0" value="0" step="1">
+        <p class="help-text">Set to 0 for no delay</p>
+      </div>
+
+      <div class="setting">
+        <label for="typing-speed">Typing speed (ms between keys):</label>
+        <input type="number" id="typing-speed" min="10" max="500" value="50" step="10">
+      </div>
+
+      <div class="actions">
+        <button id="fill-btn" class="btn primary large">Fill Puzzle</button>
+        <button id="back-btn" class="btn secondary">Back to Edit</button>
+      </div>
+
+      <div id="progress-container" class="hidden">
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <span id="progress-text">0%</span>
+      </div>
+    </section>
+
+    <section id="training-section" class="section">
+      <h3>Training Data</h3>
+      <div class="training-stats">
+        <span id="sample-count">0 samples collected</span>
+        <button id="export-btn" class="btn secondary small">Export Dataset</button>
+      </div>
+    </section>
+  </div>
+
+  <script src="popup.js" type="module"></script>
+</body>
+</html>
