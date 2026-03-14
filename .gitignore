@@ -2,3 +2,4 @@ node_modules
 dist/tesseract/
 *.map
 .DS_Store
+/.cursor
