@@ -26,8 +26,8 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["lib/*"],
-      "matches": ["https://www.nytimes.com/*"]
+      "resources": ["lib/*", "dist/*", "dist/tesseract/*"],
+      "matches": ["<all_urls>"]
     }
   ]
 }
