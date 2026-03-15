@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - NYT Crossword Paper Filler</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="settings.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a href="popup.html" class="back-link">&larr; Back</a>
+      <h1>Settings</h1>
+    </header>
+
+    <div id="status-bar" class="status-bar hidden">
+      <span id="status-message"></span>
+    </div>
+
+    <section class="section">
+      <h3>Cloud OCR Provider</h3>
+      
+      <div class="setting">
+        <label for="ocr-provider">Provider</label>
+        <select id="ocr-provider">
+          <option value="google">Google Cloud Vision</option>
+          <option value="azure">Azure Computer Vision</option>
+          <option value="aws">AWS Textract</option>
+        </select>
+      </div>
+
+      <div class="setting">
+        <label for="api-key">API Key</label>
+        <div class="input-with-toggle">
+          <input type="password" id="api-key" placeholder="Enter your API key">
+          <button type="button" id="toggle-key" class="btn-icon" title="Show/Hide">
+            <span class="icon-eye">&#128065;</span>
+          </button>
+        </div>
+        <p class="help-text" id="provider-help">
+          Get your API key from the Google Cloud Console.
+        </p>
+      </div>
+
+      <div id="azure-settings" class="provider-specific hidden">
+        <div class="setting">
+          <label for="azure-endpoint">Azure Endpoint</label>
+          <input type="text" id="azure-endpoint" placeholder="https://your-resource.cognitiveservices.azure.com">
+          <p class="help-text">Your Azure Computer Vision resource endpoint.</p>
+        </div>
+      </div>
+
+      <div id="aws-settings" class="provider-specific hidden">
+        <div class="setting">
+          <label for="aws-region">AWS Region</label>
+          <select id="aws-region">
+            <option value="us-east-1">US East (N. Virginia)</option>
+            <option value="us-west-2">US West (Oregon)</option>
+            <option value="eu-west-1">EU (Ireland)</option>
+            <option value="ap-northeast-1">Asia Pacific (Tokyo)</option>
+          </select>
+        </div>
+        <div class="setting">
+          <label for="aws-secret">AWS Secret Key</label>
+          <input type="password" id="aws-secret" placeholder="Enter your AWS secret key">
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h3>Test Connection</h3>
+      <p class="help-text">Verify your API key works before using the extension.</p>
+      <button id="test-btn" class="btn primary">Test API Connection</button>
+      <div id="test-result" class="test-result hidden"></div>
+    </section>
+
+    <div class="actions">
+      <button id="save-btn" class="btn primary large">Save Settings</button>
+    </div>
+  </div>
+
+  <script src="../dist/settings.bundle.js"></script>
+</body>
+</html>

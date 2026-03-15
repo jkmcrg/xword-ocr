@@ -5,44 +5,13 @@ const fs = require('fs');
 const isWatch = process.argv.includes('--watch');
 
 const distDir = path.join(__dirname, 'dist');
-const tesseractDir = path.join(distDir, 'tesseract');
 
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir, { recursive: true });
 }
-if (!fs.existsSync(tesseractDir)) {
-  fs.mkdirSync(tesseractDir, { recursive: true });
-}
 
-function copyTesseractFiles() {
-  const filesToCopy = [
-    {
-      src: 'node_modules/tesseract.js/dist/worker.min.js',
-      dest: 'dist/tesseract/worker.min.js'
-    },
-    {
-      src: 'node_modules/tesseract.js-core/tesseract-core-simd.wasm.js',
-      dest: 'dist/tesseract/tesseract-core-simd.wasm.js'
-    }
-  ];
-
-  for (const file of filesToCopy) {
-    const srcPath = path.join(__dirname, file.src);
-    const destPath = path.join(__dirname, file.dest);
-    
-    if (fs.existsSync(srcPath)) {
-      fs.copyFileSync(srcPath, destPath);
-      console.log(`Copied: ${file.src} -> ${file.dest}`);
-    } else {
-      console.warn(`Warning: ${file.src} not found`);
-    }
-  }
-}
-
-const buildOptions = {
-  entryPoints: ['popup/popup.js'],
+const commonOptions = {
   bundle: true,
-  outfile: 'dist/popup.bundle.js',
   format: 'iife',
   platform: 'browser',
   target: ['chrome100'],
@@ -53,17 +22,32 @@ const buildOptions = {
   }
 };
 
+const buildConfigs = [
+  {
+    ...commonOptions,
+    entryPoints: ['popup/popup.js'],
+    outfile: 'dist/popup.bundle.js'
+  },
+  {
+    ...commonOptions,
+    entryPoints: ['popup/settings.js'],
+    outfile: 'dist/settings.bundle.js'
+  }
+];
+
 async function build() {
   try {
-    copyTesseractFiles();
-
     if (isWatch) {
-      const ctx = await esbuild.context(buildOptions);
-      await ctx.watch();
+      for (const config of buildConfigs) {
+        const ctx = await esbuild.context(config);
+        await ctx.watch();
+      }
       console.log('Watching for changes...');
     } else {
-      await esbuild.build(buildOptions);
-      console.log('Build complete: dist/popup.bundle.js');
+      for (const config of buildConfigs) {
+        await esbuild.build(config);
+        console.log(`Build complete: ${config.outfile}`);
+      }
     }
   } catch (err) {
     console.error('Build failed:', err);

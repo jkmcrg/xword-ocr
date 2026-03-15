@@ -3,16 +3,16 @@
   "name": "NYT Crossword Paper Filler",
   "version": "1.0.0",
   "description": "Scan your completed paper crossword puzzles and automatically fill them into the NYT web interface",
-  "content_security_policy": {
-    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
-  },
   "permissions": [
     "activeTab",
     "storage",
     "scripting"
   ],
   "host_permissions": [
-    "https://www.nytimes.com/crosswords/*"
+    "https://www.nytimes.com/crosswords/*",
+    "https://vision.googleapis.com/*",
+    "https://*.cognitiveservices.azure.com/*",
+    "https://textract.*.amazonaws.com/*"
   ],
   "action": {
     "default_popup": "popup/popup.html"
@@ -29,7 +29,7 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["lib/*", "dist/*", "dist/tesseract/*"],
+      "resources": ["lib/*", "dist/*"],
       "matches": ["<all_urls>"]
     }
   ]

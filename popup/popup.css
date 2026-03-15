@@ -20,11 +20,26 @@ body {
 header {
   text-align: center;
   margin-bottom: 16px;
+  position: relative;
 }
 
 header h1 {
   font-size: 18px;
   color: #121212;
+}
+
+.settings-link {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #666;
+  text-decoration: none;
+}
+
+.settings-link:hover {
+  color: #1a73e8;
 }
 
 .section {

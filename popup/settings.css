@@ -1,0 +1,79 @@
+.back-link {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  text-decoration: none;
+  color: #1a73e8;
+  font-size: 14px;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+header {
+  position: relative;
+  padding-top: 8px;
+}
+
+.input-with-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.input-with-toggle input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.btn-icon {
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background: #f5f5f5;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.btn-icon:hover {
+  background: #e0e0e0;
+}
+
+.provider-specific {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #eee;
+}
+
+.setting input[type="text"],
+.setting select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.test-result {
+  margin-top: 12px;
+  padding: 12px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.test-result.success {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.test-result.error {
+  background: #ffebee;
+  color: #c62828;
+}
+
+.actions {
+  margin-top: 16px;
+}

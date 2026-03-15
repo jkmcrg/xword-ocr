@@ -1,23 +1,26 @@
 import { ImageProcessor } from '../lib/image-processor.js';
-import { OCRWorker } from '../lib/ocr-worker.js';
 import { TrainingStore } from '../lib/training-store.js';
+import { SettingsStore } from '../lib/settings-store.js';
 import { exportDataset } from '../lib/dataset-export.js';
+import { mapCharsToGrid, detectBlackCellsInGrid, mergeGridWithBlackCells } from '../lib/grid-mapper.js';
 
 class PopupApp {
   constructor() {
     this.imageProcessor = new ImageProcessor();
-    this.ocrWorker = new OCRWorker();
     this.trainingStore = new TrainingStore();
+    this.settingsStore = new SettingsStore();
     
     this.capturedImage = null;
+    this.capturedImageBase64 = null;
     this.gridData = null;
-    this.cellImages = [];
+    this.gridBounds = null;
     this.gridSize = 15;
     
     this.initElements();
     this.initEventListeners();
     this.initWebcam();
     this.updateTrainingStats();
+    this.checkApiKey();
   }
 
   initElements() {
@@ -97,6 +100,13 @@ class PopupApp {
     });
   }
 
+  async checkApiKey() {
+    const hasKey = await this.settingsStore.hasApiKey();
+    if (!hasKey) {
+      this.showStatus('Please configure your OCR API key in Settings (gear icon)', 'info');
+    }
+  }
+
   async initWebcam() {
     try {
       const stream = await navigator.mediaDevices.getUserMedia({
@@ -130,6 +140,7 @@ class PopupApp {
     ctx.drawImage(video, 0, 0);
     
     this.capturedImage = canvas;
+    this.capturedImageBase64 = canvas.toDataURL('image/png');
     this.showImagePreview(canvas);
   }
 
@@ -150,6 +161,7 @@ class PopupApp {
         ctx.drawImage(img, 0, 0);
         
         this.capturedImage = canvas;
+        this.capturedImageBase64 = canvas.toDataURL('image/png');
         this.showImagePreview(canvas);
       };
       img.src = e.target.result;
@@ -174,40 +186,62 @@ class PopupApp {
       return;
     }
 
+    const settings = await this.settingsStore.getAll();
+    if (!settings.apiKey) {
+      this.showStatus('Please configure your OCR API key in Settings first', 'error');
+      return;
+    }
+
     this.showStatus('Processing image...', 'processing');
     this.processBtn.disabled = true;
 
     try {
       const preprocessed = await this.imageProcessor.preprocess(this.capturedImage);
       
-      this.cellImages = await this.imageProcessor.extractCells(
-        preprocessed, 
+      this.gridBounds = this.imageProcessor.detectGrid(preprocessed);
+
+      this.showStatus('Sending to cloud OCR...', 'processing');
+
+      const response = await chrome.runtime.sendMessage({
+        action: 'cloudOCR',
+        imageBase64: this.capturedImageBase64,
+        settings
+      });
+
+      if (!response.success) {
+        throw new Error(response.error || 'OCR failed');
+      }
+
+      this.showStatus('Mapping characters to grid...', 'processing');
+
+      const ocrResults = response.data;
+      const charGrid = mapCharsToGrid(
+        ocrResults, 
+        this.gridBounds, 
+        this.gridSize,
+        this.capturedImage.width,
+        this.capturedImage.height
+      );
+
+      const blackCells = detectBlackCellsInGrid(
+        preprocessed,
+        this.gridBounds,
         this.gridSize
       );
 
-      this.showStatus('Running OCR on cells...', 'processing');
-      
-      await this.ocrWorker.initialize();
-      
+      const gridWithBlackCells = mergeGridWithBlackCells(charGrid, blackCells);
+
       this.gridData = [];
-      const totalCells = this.gridSize * this.gridSize;
-      
-      for (let i = 0; i < this.cellImages.length; i++) {
-        const cell = this.cellImages[i];
-        
-        if (cell.isBlack) {
-          this.gridData.push({ letter: '', isBlack: true, confidence: 1 });
-        } else {
-          const result = await this.ocrWorker.recognizeChar(cell.canvas);
+      for (let row = 0; row < this.gridSize; row++) {
+        for (let col = 0; col < this.gridSize; col++) {
+          const cell = gridWithBlackCells[row][col];
           this.gridData.push({
-            letter: result.letter,
-            isBlack: false,
-            confidence: result.confidence
+            letter: cell.char || '',
+            isBlack: cell.isBlack,
+            confidence: cell.confidence || 0,
+            row,
+            col
           });
-        }
-        
-        if (i % 10 === 0) {
-          this.showStatus(`OCR: ${Math.round((i / totalCells) * 100)}% complete`, 'processing');
         }
       }
 
@@ -238,7 +272,7 @@ class PopupApp {
         button.classList.add('black');
       } else {
         button.textContent = cell.letter;
-        if (cell.confidence < 0.7) {
+        if (cell.confidence < 0.7 && cell.letter) {
           button.classList.add('low-confidence');
         }
         button.addEventListener('click', () => this.editCell(i));
@@ -291,6 +325,7 @@ class PopupApp {
 
   retake() {
     this.capturedImage = null;
+    this.capturedImageBase64 = null;
     this.previewContainer.classList.add('hidden');
     this.gridSection.classList.add('hidden');
     this.fillSection.classList.add('hidden');
@@ -357,35 +392,41 @@ class PopupApp {
   }
 
   async saveTrainingData() {
-    for (let i = 0; i < this.gridData.length; i++) {
-      const cell = this.gridData[i];
-      if (cell.isBlack || !cell.letter) continue;
-
-      const cellImage = this.cellImages[i];
-      if (!cellImage || cellImage.isBlack) continue;
-
-      const resized = this.imageProcessor.resizeTo28x28(cellImage.canvas);
-      
-      await this.trainingStore.saveSample({
-        imageData: resized,
-        label: cell.letter,
-        timestamp: Date.now()
-      });
+    const labels = [];
+    for (let row = 0; row < this.gridSize; row++) {
+      const rowLabels = [];
+      for (let col = 0; col < this.gridSize; col++) {
+        const index = row * this.gridSize + col;
+        const cell = this.gridData[index];
+        rowLabels.push(cell.isBlack ? '' : (cell.letter || ''));
+      }
+      labels.push(rowLabels);
     }
+
+    const settings = await this.settingsStore.getAll();
+
+    await this.trainingStore.savePuzzle({
+      sourceImage: this.capturedImageBase64,
+      gridSize: this.gridSize,
+      gridBounds: this.gridBounds,
+      labels,
+      timestamp: Date.now(),
+      ocrProvider: settings.ocrProvider || 'unknown'
+    });
     
     this.updateTrainingStats();
   }
 
   async updateTrainingStats() {
     const count = await this.trainingStore.getCount();
-    this.sampleCount.textContent = `${count} samples collected`;
+    this.sampleCount.textContent = `${count} puzzle${count !== 1 ? 's' : ''} saved`;
   }
 
   async exportTrainingData() {
     this.showStatus('Exporting dataset...', 'processing');
     try {
-      await exportDataset(this.trainingStore);
-      this.showStatus('Dataset exported!', 'success');
+      const result = await exportDataset(this.trainingStore);
+      this.showStatus(`Exported ${result.puzzleCount} puzzles with ${result.letterCount} letters!`, 'success');
     } catch (err) {
       console.error('Export error:', err);
       this.showStatus(`Export error: ${err.message || err || 'Unknown error'}`, 'error');
@@ -399,7 +440,7 @@ class PopupApp {
       return;
     }
     
-    if (!confirm(`Clear all ${count} training samples? This cannot be undone.`)) {
+    if (!confirm(`Clear all ${count} saved puzzle${count !== 1 ? 's' : ''}? This cannot be undone.`)) {
       return;
     }
     
