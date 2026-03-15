@@ -1,5 +1,16 @@
 # NYT Crossword Paper Filler
 
+## Notes
+
+2.5 put into it so far. Started w tesseract, went to a cloud provider for text detection. They are all not doing well from what I can see.
+
+PaddleOCR looks like it works really well so far. We just need to clean up the data before we sent it through. Try the puzzle.png in this dir.
+- [go to the eval page](https://huggingface.co/spaces/PaddlePaddle/PaddleOCR-VL_Online_Demo)
+- Select 'Element-level Recognition' tab
+- Click 'Table Recognition' button
+
+It does pretty well. But the structure and lines do really throw it off.
+
 > **Original Prompt:**
 > I love doing the NYT crossword but I can't track my streak or times because I like to print them out rather than do them on the app or online. I would like a web extension that solves both of these problems:
 > - It takes a picture of the completed puzzle, scans it with OCR, loads it into memory, and then inputs it into the online web interface for the puzzle
