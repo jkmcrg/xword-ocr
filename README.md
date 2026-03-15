@@ -11,6 +11,10 @@ PaddleOCR looks like it works really well so far. We just need to clean up the d
 
 It does pretty well. But the structure and lines do really throw it off.
 
+## Largely AI coded
+
+With Claude Opus 4.5
+
 > **Original Prompt:**
 > I love doing the NYT crossword but I can't track my streak or times because I like to print them out rather than do them on the app or online. I would like a web extension that solves both of these problems:
 > - It takes a picture of the completed puzzle, scans it with OCR, loads it into memory, and then inputs it into the online web interface for the puzzle
