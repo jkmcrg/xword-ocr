@@ -1,5 +1,7 @@
 # NYT Crossword Paper Filler
 
+## Status: doesn't work
+
 ## Notes
 
 2.5 put into it so far. Started w tesseract, went to a cloud provider for text detection. They are all not doing well from what I can see.
