@@ -1,4 +1,6 @@
-# NYT Crossword Paper Filler
+# Scan paper xwords into nytimes.com/crosswords
+
+Chrome browser extension.
 
 ## Status: doesn't work
 
